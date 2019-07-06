@@ -42,6 +42,5 @@ public class DiffDeluxeSwapDiffSidesAction extends DumbAwareAction {
     JComponent source = (JComponent)anActionEvent.getInputEvent().getSource();
     jbPopup.showUnderneathOf(source);
 
-    // new MasterDetailPopupBuilder(anActionEvent.getProject()).createMasterDetailPopup();
   }
 }
