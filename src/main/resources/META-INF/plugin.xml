@@ -5,11 +5,12 @@
   <vendor email="imgdiff.20.mkrausse@spamgourmet.com" url="http://www.m-krausse.de">m-krausse.de</vendor>
 
   <description><![CDATA[
-     This plugin shows the diff of two images in the diff view.
+     This plugin shows the diff of two images in the diff view.</br>
+     This is a very early version of the plugin, not much is working.
     ]]></description>
 
   <change-notes><![CDATA[
-      0.1.0 - 
+      0.1.0 - first offical release.
     ]]>
   </change-notes>
 
@@ -27,13 +28,10 @@
   </extensions>
 
   <actions>
-    <action id="SwopSidesInDiffWindow" class="de.ehmkah.projects.diffdeluxe.DiffDeluxeSwapDiffSidesAction" text="Swop Sides"
-            icon="AllIcons.Actions.SwapPanels">
+    <action id="ImgDiffAction" class="de.ehmkah.projects.imgdiff.ImgDiffAction" text="Diff Images"
+            icon="Icons.IMG_DIFF">
       <add-to-group group-id="Diff.ViewerToolbar"/>
-      <add-to-group group-id="Diff.KeymapGroup" relative-to-action="OpenFileEditorInBlankDiffWindow" anchor="after"/>
-
     </action>
-
   </actions>
 
 </idea-plugin>

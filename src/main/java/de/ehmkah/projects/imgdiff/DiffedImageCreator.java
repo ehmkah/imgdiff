@@ -1,4 +1,4 @@
-package de.ehmkah.projects.diffdeluxe;
+package de.ehmkah.projects.imgdiff;
 
 import java.awt.image.BufferedImage;
 
