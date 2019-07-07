@@ -1,17 +1,15 @@
 <idea-plugin>
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Diff Deluxe</name>
-  <version>0.4</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <id>de.ehmkah.projects.imgdiff</id>
+  <name>Image Diff</name>
+  <version>0.1.0</version>
+  <vendor email="imgdiff.20.mkrausse@spamgourmet.com" url="http://www.m-krausse.de">m-krausse.de</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+     This plugin shows the diff of two images in the diff view.
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      0.1.0 - 
     ]]>
   </change-notes>
 
@@ -29,16 +27,12 @@
   </extensions>
 
   <actions>
-    <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
-      <action id="Myplugin.Textboxes" class="de.ehmkah.projects.diffdeluxe.CallDiffDeluxe" text="DiffDeluxe" description="A test menu item" />
-    </group>
     <action id="SwopSidesInDiffWindow" class="de.ehmkah.projects.diffdeluxe.DiffDeluxeSwapDiffSidesAction" text="Swop Sides"
             icon="AllIcons.Actions.SwapPanels">
       <add-to-group group-id="Diff.ViewerToolbar"/>
       <add-to-group group-id="Diff.KeymapGroup" relative-to-action="OpenFileEditorInBlankDiffWindow" anchor="after"/>
 
     </action>
-
 
   </actions>
 

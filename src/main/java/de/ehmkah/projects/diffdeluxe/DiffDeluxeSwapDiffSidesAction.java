@@ -4,6 +4,7 @@ import com.intellij.diff.actions.impl.MutableDiffRequestChain;
 import com.intellij.diff.actions.impl.MutableDiffRequestChainKt;
 import com.intellij.diff.contents.FileContent;
 import com.intellij.diff.requests.SimpleDiffRequest;
+import com.intellij.diff.tools.util.DiffDataKeys;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
@@ -31,7 +32,6 @@ import java.io.IOException;
  */
 public class DiffDeluxeSwapDiffSidesAction extends DumbAwareAction {
 
-  private JBPopup jbPopup;
 
   private DiffedImageCreator diffedImageCreator = new DiffedImageCreator();
 
@@ -42,7 +42,7 @@ public class DiffDeluxeSwapDiffSidesAction extends DumbAwareAction {
       JPanel jPanel = ImageEditorManagerImpl.createImageEditorUI(bufferedImage);
 
       ComponentPopupBuilder componentPopupBuilder = JBPopupFactory.getInstance().createComponentPopupBuilder(jPanel, null);
-      jbPopup = componentPopupBuilder.createPopup();
+      JBPopup jbPopup = componentPopupBuilder.createPopup();
       jbPopup.setMinimumSize(new Dimension(200, 300));
       AnAction okAction = new DumbAwareAction() {
         @Override
@@ -54,17 +54,13 @@ public class DiffDeluxeSwapDiffSidesAction extends DumbAwareAction {
       JComponent source = (JComponent) anActionEvent.getInputEvent().getSource();
       jbPopup.showUnderneathOf(source);
     } catch(Exception e) {
-      System.out.println("Bad luck, my friend");
+      System.out.println("Bad luck, my friend"+e);
     }
   }
 
   private BufferedImage readImage(int index, AnActionEvent anActionEvent) throws IOException {
-    ByteArrayInputStream inputstream = new ByteArrayInputStream(((FileContent) ((SimpleDiffRequest) anActionEvent.getDataContext().getData("diff_request")).getContents().get(index)).getFile().contentsToByteArray());
+    ByteArrayInputStream inputstream = new ByteArrayInputStream(((FileContent) ((SimpleDiffRequest) anActionEvent.getDataContext().getData(DiffDataKeys.DIFF_REQUEST)).getContents().get(index)).getFile().contentsToByteArray());
     return ImageIO.read(inputstream);
   }
 
-
-  public void foo(int index) {
-
-  }
 }
