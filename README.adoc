@@ -1,0 +1,14 @@
+= imgdiff
+
+This is an IntelliPlugin which shows the diff between two images in the normal diff view.
+
+For bugs and comments just use issues.
+
+
+== Installation
+
+https://plugins.jetbrains.com/plugin/12691-image-diff/
+
+== Development
+
+Pullrequets are always welcome.
