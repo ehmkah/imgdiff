@@ -11,4 +11,7 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 
 == Development
 
+* import to intellij with gradle
+* run task `runIde`
+
 Pullrequets are always welcome.
