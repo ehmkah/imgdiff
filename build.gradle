@@ -17,10 +17,11 @@ dependencies {
 }
 
 intellij {
-    version '2019.1.3'
+    version '2019.1.2'
 }
 patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+    intellij.updateSinceUntilBuild false
+    changeNotes """                             
+       0.2.0 - support gradle for build, support all jetbrain products
+       0.1.0 - first offical release - very bugy"""
 }

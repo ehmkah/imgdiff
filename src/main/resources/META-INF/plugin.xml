@@ -1,7 +1,6 @@
 <idea-plugin>
   <id>de.ehmkah.projects.imgdiff</id>
   <name>Image Diff</name>
-  <version>0.1.0</version>
   <vendor email="imgdiff.20.mkrausse@spamgourmet.com" url="http://www.m-krausse.de">m-krausse.de</vendor>
 
   <description><![CDATA[
@@ -9,19 +8,12 @@
      This is a very early version of the plugin, not much is working.
     ]]></description>
 
-  <change-notes><![CDATA[
-      0.1.0 - first offical release - very bugy
-    ]]>
-  </change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
-
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
-  <!-- uncomment to enable plugin in all products
+  <idea-version since-build="173.0"/>
+
+  <!-- uncomment to enable plugin in all products-->
   <depends>com.intellij.modules.lang</depends>
-  -->
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
