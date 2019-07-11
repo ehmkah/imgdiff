@@ -1,18 +1,10 @@
-package de.ehmkah.projects.diffdeluxe;
+package de.ehmkah.projects.imgdiff;
 
-import de.ehmkah.projects.imgdiff.DiffedImageCreator;
 import org.junit.Assert;
 import org.junit.Test;
-import sun.awt.image.ByteInterleavedRaster;
-import sun.awt.image.IntegerInterleavedRaster;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.awt.image.DataBufferInt;
-import java.awt.image.Raster;
-import java.io.File;
 import java.io.IOException;
 
 /**
