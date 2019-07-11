@@ -11,7 +11,8 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 
 == Development
 
-* current build state [![Build Status](https://travis-ci.org/ehmkah/imgdiff.svg?branch=master)](https://travis-ci.org/ehmkah/imgdiff)
+* current build state 
+[![Build Status](https://api.travis-ci.org/ehmkah/imgdiff.svg?branch=master)](https://travis-ci.org/ehmkah/imgdiff)
 
 * import to intellij with gradle
 * run task `runIde`
