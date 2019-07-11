@@ -1,9 +1,9 @@
 = imgdiff
 
-This is an IntelliPlugin which shows the diff between two images in the normal diff view.
+_imgdiff_ is a plugin for IntelliJ and similar Jetbrains-products.
+It shows the diff between two images.
 
 For bugs and comments just use issues.
-
 
 == Installation
 
@@ -11,9 +11,9 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 
 == Development
 
-* current build state : image:https://api.travis-ci.org/ehmkah/cas_swa_sad.svg?branch=master[link="https://travis-ci.org/ehmkah/imgdiff"]
+* current build state : image:https://api.travis-ci.org/ehmkah/imgdiff.svg?branch=master[link="https://travis-ci.org/ehmkah/imgdiff"]
 
 * import to intellij with gradle
 * run task `runIde`
 
-Pullrequets are always welcome.
+* Pullrequets are always welcome :-)
