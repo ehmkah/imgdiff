@@ -5,7 +5,8 @@
 
   <description><![CDATA[
      This plugin shows the diff of two images in the diff view.</br>
-     This is a very early version of the plugin, not much is working.
+     This is a very early version of the plugin, not much is working and a lot of crashing.
+     I am happy if you report issues, I am going to fix them.
     ]]></description>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
