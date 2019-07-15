@@ -21,7 +21,9 @@ intellij {
 }
 patchPluginXml {
     intellij.updateSinceUntilBuild false
-    changeNotes """                             
-       0.2.0 - support gradle for build; support all jetbrain products; bugfix no crash if image size differs
-       0.1.0 - first offical release - very bugy"""
+    changeNotes """ 
+<ul>  
+   <li>0.3.0 - issues/5 (changed color-schema for diff)</li>                          
+   <li>0.2.0 - support gradle for build; support all jetbrain products; bugfix no crash if image size differs</li>
+       <li>0.1.0 - first offical release - very bugy</li>"""
 }

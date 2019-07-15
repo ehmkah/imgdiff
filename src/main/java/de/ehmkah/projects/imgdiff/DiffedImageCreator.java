@@ -14,6 +14,9 @@ import java.awt.image.BufferedImage;
  */
 public class DiffedImageCreator {
 
+  private final int PIXEL_HAVE_SAME_VALUE =  16777215;
+  private final int PIXEL_HAVE_DIFFERENT_VALUE = 13294074;
+
   public BufferedImage getDifferenceImage(BufferedImage img1, BufferedImage img2) {
     int width1 = img1.getWidth(); // Change - getWidth() and getHeight() for BufferedImage
     int width2 = img2.getWidth();
@@ -44,6 +47,7 @@ public class DiffedImageCreator {
         // Make the difference image gray scale
         // The RGB components are all the same
         result = (diff << 16) | (diff << 8) | diff;
+        result = result == 0 ? PIXEL_HAVE_SAME_VALUE : PIXEL_HAVE_DIFFERENT_VALUE;
         outImg.setRGB(j, i, result);
       }
     }
