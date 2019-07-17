@@ -23,6 +23,10 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>  
+   <li>0.4.0
+    <ul>
+    </ul>
+   </li>
    <li>0.3.0
     <ul>
       <li><a href="https://github.com/ehmkah/imgdiff/issues/5">issues/5</> (changed color-schema for diff)</li>   
