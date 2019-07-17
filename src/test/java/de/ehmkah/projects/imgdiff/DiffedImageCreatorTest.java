@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -16,11 +17,22 @@ public class DiffedImageCreatorTest {
 
   @Test
   public void testDiff() throws Exception {
-    BufferedImage original= readImage("/original.png");
+    BufferedImage original = readImage("/original.png");
     BufferedImage changed = readImage("/modified.png");
 
     BufferedImage actual = sut.getDifferenceImage(original, changed);
     BufferedImage expected = readImage("/expected.png");
+
+    Assert.assertTrue(compareImages(expected, actual));
+  }
+
+  @Test
+  public void testDifferentSize() throws Exception {
+    BufferedImage original = readImage("/original.png");
+    BufferedImage changed = readImage("/modifiedDifferentSize.png");
+
+    BufferedImage actual = sut.getDifferenceImage(original, changed);
+    BufferedImage expected = readImage("/expectedDifferentSize.png");
 
     Assert.assertTrue(compareImages(expected, actual));
   }
@@ -39,7 +51,7 @@ public class DiffedImageCreatorTest {
       return false;
     }
 
-    int width  = imgA.getWidth();
+    int width = imgA.getWidth();
     int height = imgA.getHeight();
 
     // Loop over every pixel.
