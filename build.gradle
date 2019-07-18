@@ -29,8 +29,8 @@ patchPluginXml {
    </li>
    <li>0.3.0
     <ul>
-      <li><a href="https://github.com/ehmkah/imgdiff/issues/5">issues/5</> (changed color-schema for diff)</li>   
-      <li><a href="https://github.com/ehmkah/imgdiff/issues/1">issue/1</> (bugfix dont crash if size differes</li>
+      <li><a href="https://github.com/ehmkah/imgdiff/issues/5">issues/5</a> (changed color-schema for diff)</li>   
+      <li><a href="https://github.com/ehmkah/imgdiff/issues/1">issue/1</a> (bugfix dont crash if size differes</li>
     </ul>
     </li>                       
    <li>0.2.0 - support gradle for build; support all jetbrain products; bugfix no crash if image size differs</li>
