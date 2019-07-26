@@ -25,6 +25,7 @@ patchPluginXml {
 <ul>  
    <li>0.4.0
     <ul>
+  <li><a href="https://github.com/ehmkah/imgdiff/issues/9">issue/9</a> (feature Short alt+F/ to open imgDiff)</li>
     </ul>
    </li>
    <li>0.3.0

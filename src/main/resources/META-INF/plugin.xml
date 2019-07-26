@@ -24,6 +24,7 @@
     <action id="ImgDiffAction" class="de.ehmkah.projects.imgdiff.ImgDiffAction" text="Diff Images"
             icon="Icons.IMG_DIFF">
       <add-to-group group-id="Diff.ViewerToolbar"/>
+      <keyboard-shortcut first-keystroke="alt F7" keymap="$default"/>
     </action>
   </actions>
 
