@@ -18,15 +18,15 @@ public class DiffedImageCreator {
     int width2 = img2.getWidth();
     int height1 = img1.getHeight();
     int height2 = img2.getHeight();
-    int targetWidth = width1 > width2 ? width1 : width2;
-    int targetHeight = height1 > height2 ? height1 : height2;
+    int targetWidth = Math.max(width1, width2);
+    int targetHeight = Math.max(height1, height2);
 
     BufferedImage result = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB);
 
     for (int currentHeight = 0; currentHeight < targetHeight; currentHeight++) {
       for (int currentWidth = 0; currentWidth < targetWidth; currentWidth++) {
         int diff;
-        int diffPixel = 0;
+        int diffPixel;
         if (pixelOutOfBounds(currentHeight, currentWidth, img1, img2)) {
           diffPixel = PIXELD_OUT_OF_BOUNDS_VALUE;
         } else {
