@@ -14,7 +14,6 @@
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
   </extensions>
 
   <actions>
