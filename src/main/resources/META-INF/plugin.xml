@@ -9,20 +9,16 @@
      I am happy if you report issues, I am going to fix them.
     ]]></description>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
   <idea-version since-build="173.0"/>
 
-  <!-- uncomment to enable plugin in all products-->
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
   </extensions>
 
   <actions>
     <action id="ImgDiffAction" class="de.ehmkah.projects.imgdiff.ImgDiffAction" text="Diff Images"
-            icon="Icons.IMG_DIFF">
+            icon="/icons/imgdiff.svg">
       <add-to-group group-id="Diff.ViewerToolbar"/>
       <keyboard-shortcut first-keystroke="alt F7" keymap="$default"/>
     </action>
