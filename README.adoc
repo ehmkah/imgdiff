@@ -9,6 +9,14 @@ For bugs and comments just use issues.
 
 https://plugins.jetbrains.com/plugin/12691-image-diff/
 
+== Usage
+
+* Open diff view of Intellij for two images
+* you should see the small icon (red circle)
+* image:screenshot.png[]
+
+
+
 == Development
 
 * current build state : image:https://api.travis-ci.org/ehmkah/imgdiff.svg?branch=master[link="https://travis-ci.org/ehmkah/imgdiff"]
