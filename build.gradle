@@ -24,7 +24,10 @@ patchPluginXml {
     changeNotes """ 
 <ul>  
    <li>0.5.0
-   <ul><a href="https://github.com/ehmkah/imgdiff/issues/13">issues/13</a> (refactoring: move source code to kotlin)</ul>
+   <ul>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/13">issue/13</a> (refactoring: move source code to kotlin)</li>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/6">issue/6</a> (feature: image for plugin)</li>
+   </ul>
    </li>
    <li>0.4.0
     <ul>
