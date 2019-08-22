@@ -1,6 +1,8 @@
 package de.ehmkah.projects.imgdiff
 
+import com.intellij.util.ui.UIUtil
 import java.awt.image.BufferedImage
+import javax.imageio.ImageIO
 
 /**
  * stolen from https://stackoverflow.com/questions/25022578/highlight-differences-between-images and modified.
@@ -21,7 +23,9 @@ class DiffedImageCreator {
         val targetWidth = Math.max(width1, width2)
         val targetHeight = Math.max(height1, height2)
 
-        val result = BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB)
+        var imagesAreIdentical = true
+
+        val result = UIUtil.createImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB)
 
         for (currentHeight in 0 until targetHeight) {
             for (currentWidth in 0 until targetWidth) {
@@ -44,10 +48,18 @@ class DiffedImageCreator {
                     diff /= 3
 
                     diffPixel = diff shl 16 or (diff shl 8) or diff
-                    diffPixel = if (diffPixel == 0) PIXEL_HAVE_SAME_VALUE else PIXEL_HAVE_DIFFERENT_VALUE
+                    if (diffPixel == 0) {
+                        diffPixel = PIXEL_HAVE_SAME_VALUE
+                    } else {
+                        diffPixel = PIXEL_HAVE_DIFFERENT_VALUE
+                        imagesAreIdentical = false
+                    }
                 }
                 result.setRGB(currentWidth, currentHeight, diffPixel)
             }
+        }
+        if (imagesAreIdentical) {
+            return ImageIO.read(DiffedImageCreator::class.java.getResourceAsStream("/identical.png"))
         }
 
         return result
