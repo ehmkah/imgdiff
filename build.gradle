@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm' version "1.3.41"
-    id 'org.jetbrains.intellij' version '0.4.9'
+    id 'org.jetbrains.kotlin.jvm' version "1.3.50"
+    id 'org.jetbrains.intellij' version '0.4.10'
 }
 
 group 'de.ehmkah.projects'
@@ -25,7 +25,7 @@ patchPluginXml {
 <ul>  
    <li>0.7.0
    <ul>
-    <li><a href="https://github.com/ehmkah/imgdiff/issues/XXX">issue/XXX</a> XXXXXXle to 5.6)</li>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/22">issue/22</a> (technical: upgrade used kotlin and intellij gradle-plugin)</li>
    </ul>
    </li> 
    <li>0.6.0
