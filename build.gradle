@@ -35,7 +35,7 @@ patchPluginXml {
    </li>
    <li>0.5.0
    <ul>
-    <li><a href="https://github.com/ehmkah/imgdiff/issues/17">issue/15</a> (refactoring: update gradle to 5.6)</li>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/17">issue/17</a> (refactoring: update gradle to 5.6)</li>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/15">issue/15</a> (feature: make it easier to identify identical images)</li>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/13">issue/13</a> (refactoring: move source code to kotlin)</li>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/6">issue/6</a> (feature: image for plugin)</li>
