@@ -1,6 +1,5 @@
 package de.ehmkah.projects.imgdiff;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import javax.imageio.ImageIO;
@@ -24,6 +23,28 @@ public class DiffedImageCreatorTest {
 
         BufferedImage actual = sut.getDifferenceImage(original, changed);
         BufferedImage expected = readImage("/expected.png");
+
+        assertTrue(compareImages(expected, actual));
+    }
+
+    @Test
+    public void testDiffDiffer() throws Exception {
+        BufferedImage original = readImage("/original.png");
+        BufferedImage changed = readImage("/modified.png");
+
+        BufferedImage actual = sut.getDifferenceImage(original, changed);
+        BufferedImage expected = readImage("/expected.png");
+
+        assertTrue(compareImages(expected, actual));
+    }
+
+    @Test
+    public void testDiffDiffer2() throws Exception {
+        BufferedImage original = readImage("/smallBlack.png");
+        BufferedImage changed = readImage("/smallBlackWithBorder.png");
+
+        BufferedImage actual = sut.getDifferenceImage(original, changed);
+        BufferedImage expected = readImage("/smallBlackExpected.png");
 
         assertTrue(compareImages(expected, actual));
     }
@@ -60,6 +81,10 @@ public class DiffedImageCreatorTest {
      * stolen from https://stackoverflow.com/questions/11006394/is-there-a-simple-way-to-compare-bufferedimage-instances
      */
     private boolean compareImages(BufferedImage imgA, BufferedImage imgB) throws IOException {
+
+        ImageIO.write(imgA, "png", new File("imgA.png"));
+        ImageIO.write(imgB, "png", new File("imgB.png"));
+
         // The images must be the same size.
         if (imgA.getWidth() != imgB.getWidth() || imgA.getHeight() != imgB.getHeight()) {
             return false;
@@ -73,8 +98,6 @@ public class DiffedImageCreatorTest {
             for (int x = 0; x < width; x++) {
                 // Compare the pixels for equality.
                 if (imgA.getRGB(x, y) != imgB.getRGB(x, y)) {
-                    ImageIO.write(imgA, "png", new File("imgA.png"));
-                    ImageIO.write(imgB, "png", new File("imgB.png"));
 
                     return false;
                 }

@@ -2,11 +2,10 @@ package de.ehmkah.projects.imgdiff
 
 import com.intellij.openapi.ui.DialogWrapper
 import org.intellij.images.editor.impl.ImageEditorManagerImpl
-
-import javax.swing.*
 import java.awt.BorderLayout
-import java.awt.Dimension
 import java.awt.image.BufferedImage
+import javax.swing.JComponent
+import javax.swing.JPanel
 
 /**
  * Displays the diff as a dialog.
@@ -23,9 +22,6 @@ internal class ImdDiffDialogWrapper(private val bufferedImage: BufferedImage) : 
     override fun createCenterPanel(): JComponent? {
         val result = JPanel(BorderLayout())
         val jPanel = ImageEditorManagerImpl.createImageEditorUI(bufferedImage)
-        //val width = calculateWidth(bufferedImage.width)
-        //val height = calculateHeight(bufferedImage.height)
-        //jPanel.setPreferredSize(Dimension(width, height))
         result.add(jPanel, BorderLayout.CENTER)
 
         return result
