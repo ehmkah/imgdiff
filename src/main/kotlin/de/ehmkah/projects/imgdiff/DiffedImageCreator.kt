@@ -1,6 +1,5 @@
 package de.ehmkah.projects.imgdiff
 
-import com.intellij.util.ui.UIUtil
 import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 
@@ -25,7 +24,7 @@ class DiffedImageCreator {
 
         var imagesAreIdentical = true
 
-        val result = UIUtil.createImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB)
+        val result = BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB)
 
         for (currentHeight in 0 until targetHeight) {
             for (currentWidth in 0 until targetWidth) {
