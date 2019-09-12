@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '0.6.0'
+version '0.7.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 repositories {
@@ -23,9 +23,14 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>  
-   <li>0.6.0
+   <li>0.7.0
    <ul>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/XXX">issue/XXX</a> XXXXXXle to 5.6)</li>
+   </ul>
+   </li> 
+   <li>0.6.0
+   <ul>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/20">issue/20</a> (bugfix: better detect equal images)</li>
    </ul>
    </li>
    <li>0.5.0
