@@ -33,6 +33,7 @@ class DiffedImageCreator {
                 var diffPixel: Int
                 if (pixelOutOfBounds(currentHeight, currentWidth, img1, img2)) {
                     diffPixel = PIXELD_OUT_OF_BOUNDS_VALUE
+                    imagesAreIdentical = false
                 } else {
                     val rgb1 = img1.getRGB(currentWidth, currentHeight)
                     val rgb2 = img2.getRGB(currentWidth, currentHeight)
