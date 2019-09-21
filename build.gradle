@@ -25,6 +25,7 @@ patchPluginXml {
 <ul>  
    <li>0.7.0
    <ul>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/24">issue/24</a> (bugfix: fixed memory leak)</li>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/22">issue/22</a> (technical: upgrade used kotlin and intellij gradle-plugin)</li>
    </ul>
    </li> 
