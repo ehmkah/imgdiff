@@ -39,8 +39,6 @@ class ImdDiffDialogWrapper(val bufferedImage: BufferedImage) : DialogWrapper(tru
             component.dispose();
         }
         result.get(0).removeAll()
-        println("HUHU")
-        println("GÄHN")
     }
 }
 
