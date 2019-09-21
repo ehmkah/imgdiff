@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '0.7.0'
+version '0.8.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 repositories {
@@ -22,7 +22,12 @@ intellij {
 patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
-<ul>  
+<ul> 
+    <li>0.8.0
+    <ul>
+        <li><a href="https://github.com/ehmkah/imgdiff/issues/XX">issue/XX</a> (XX)</li>
+    </ul>
+    </li>  
    <li>0.7.0
    <ul>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/24">issue/24</a> (bugfix: fixed memory leak)</li>
