@@ -2,6 +2,7 @@ package de.ehmkah.projects.imgdiff
 
 import com.intellij.diff.DiffContext
 import com.intellij.diff.FrameDiffTool
+import com.intellij.diff.contents.DiffContent
 import com.intellij.diff.contents.EmptyContent
 import com.intellij.diff.contents.FileContentImpl
 import com.intellij.diff.requests.ContentDiffRequest
@@ -22,7 +23,7 @@ class ImgDiffBinaryDiffTool : BinaryDiffTool() {
     }
 
     override fun createComponent(context: DiffContext, request: DiffRequest): FrameDiffTool.DiffViewer {
-        if (canShowRequest(request) && (request is ContentDiffRequest)) {
+        if (canShow(context, request) && (request is ContentDiffRequest)) {
             val diffContent0 = request.contents[0]
             val diffContent1 = request.contents[1]
             if (diffContent0 is FileContentImpl && diffContent1 is FileContentImpl) {
@@ -48,15 +49,17 @@ class ImgDiffBinaryDiffTool : BinaryDiffTool() {
     }
 
     override fun canShow(context: DiffContext, request: DiffRequest): Boolean {
-        return canShowRequest(request)
-    }
-
-    fun canShowRequest(request: DiffRequest): Boolean {
         if (request is ContentDiffRequest) {
-            return request.contents.size == 2 && request.contents[0] !is EmptyContent && request.contents[1] !is EmptyContent
+            return request.contents.size == 2 &&
+                    isValidImage(request.contents[0]) &&
+                    isValidImage(request.contents[1])
         }
 
         return false
+    }
+
+    private fun isValidImage(diffContent: DiffContent): Boolean {
+        return diffContent !is EmptyContent && diffContent.contentType.toString().equals("Image")
     }
 
     override fun getName(): String {
