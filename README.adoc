@@ -24,7 +24,7 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 
 * You should see the small icon (red circle)
 * image:screenshot.png[]
-* **Click icon or press ALT+F7 (shortcut)
+* }Click icon or press ALT+F7 (shortcut)
 * Close dialog (press esc)
 * This behavior will be deleted soon
 
