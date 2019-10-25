@@ -15,7 +15,7 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 
 === New Behavior
 
-* You should see something the following screenshot
+* You should see something like the following screenshot
 * image:screenshot_1_0_0.png[]
 * Select "ImageDiff" and the diff will be displayed in the middle
 * If an image has been removed or added IntelliJ defaults behavior is used (you can't use imageDiff)
