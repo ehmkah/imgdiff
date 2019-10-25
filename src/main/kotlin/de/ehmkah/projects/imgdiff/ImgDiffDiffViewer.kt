@@ -7,13 +7,9 @@ import com.intellij.diff.tools.binary.ThreesideBinaryDiffViewer
 
 class ImgDiffDiffViewer(context: DiffContext, request: DiffRequest) : ThreesideBinaryDiffViewer(context, request) {
 
-    init {
-        //myContentPanel.splitter.firstComponent.add(Button("KLICKEN!"))
-    }
-
 }
 
-fun canShowRequest(context: DiffContext, request: DiffRequest): Boolean {
+fun canShowRequest(request: DiffRequest): Boolean {
     if (request is ContentDiffRequest) {
         return request.contents.size == 2
     }
