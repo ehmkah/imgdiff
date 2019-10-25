@@ -25,7 +25,7 @@ patchPluginXml {
 <ul> 
     <li>0.8.0
     <ul>
-        <li><a href="https://github.com/ehmkah/imgdiff/issues/XX">issue/XX</a> (XX)</li>
+        <li><a href="https://github.com/ehmkah/imgdiff/issues/11">issue/11</a> feature: experimental show diff between two images. see <a href="https://github.com/ehmkah/imgdiff/blob/master/README.adoc">README</a></li>
     </ul>
     </li>  
    <li>0.7.0
