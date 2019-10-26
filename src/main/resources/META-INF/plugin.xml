@@ -13,6 +13,10 @@
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceInterface="com.intellij.diff.DiffManager"
+                        serviceImplementation="de.ehmkah.projects.imgdiff.ImgDiffManagerImpl"
+                        overrides="true"
+    />
   </extensions>
 
   <actions>

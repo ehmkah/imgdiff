@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '0.8.0-SNAPSHOT'
+version '1.0.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 repositories {
@@ -23,10 +23,10 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul> 
-    <li>0.8.0
+    <li>1.0.0
     <ul>
         <li>internal: upgrade to gradle 5.6.2</li>
-        <li><a href="https://github.com/ehmkah/imgdiff/issues/XX">issue/XX</a> (XX)</li>
+         <li><a href="https://github.com/ehmkah/imgdiff/issues/11">issue/11</a> feature: experimental show diff between two images. see <a href="https://github.com/ehmkah/imgdiff/blob/master/README.adoc">README</a></li>
     </ul>
     </li>  
    <li>0.7.0
