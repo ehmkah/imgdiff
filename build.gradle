@@ -26,6 +26,7 @@ patchPluginXml {
     <li>1.1.0
     <ul>
         <li><a href="https://github.com/ehmkah/imgdiff/issues/XX">issue/XX</a> feature: XXX</li>
+        <li>internal: upgrade to gradle 5.6.3</li>
     </ul>
     </li>  
     <li>1.0.0
