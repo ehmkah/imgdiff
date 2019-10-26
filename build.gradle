@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '1.0.0'
+version '1.1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 repositories {
@@ -23,6 +23,11 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul> 
+    <li>1.1.0
+    <ul>
+        <li><a href="https://github.com/ehmkah/imgdiff/issues/XX">issue/XX</a> feature: XXX</li>
+    </ul>
+    </li>  
     <li>1.0.0
     <ul>
         <li><a href="https://github.com/ehmkah/imgdiff/issues/11">issue/11</a> feature: experimental show diff between two images. see <a href="https://github.com/ehmkah/imgdiff/blob/master/README.adoc">README</a></li>
