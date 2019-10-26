@@ -25,7 +25,8 @@ patchPluginXml {
 <ul> 
     <li>1.0.0
     <ul>
-        <li><a href="https://github.com/ehmkah/imgdiff/issues/11">issue/11</a> feature: experimental show diff between two images. see <a href="https://github.com/ehmkah/imgdiff/blob/master/README.adoc">README</a></li>
+        <li>internal: upgrade to gradle 5.6.2</li>
+         <li><a href="https://github.com/ehmkah/imgdiff/issues/11">issue/11</a> feature: experimental show diff between two images. see <a href="https://github.com/ehmkah/imgdiff/blob/master/README.adoc">README</a></li>
     </ul>
     </li>  
    <li>0.7.0
@@ -36,7 +37,7 @@ patchPluginXml {
    </li> 
    <li>0.6.0
    <ul>
-    <li>internal: upgrade to gradle 5.6.2</li>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/20">issue/20</a> (bugfix: better detect equal images)</li>
    </ul>
    </li>
    <li>0.5.0
