@@ -6,7 +6,6 @@ plugins {
 group 'de.ehmkah.projects'
 version '1.1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
@@ -67,5 +66,5 @@ patchPluginXml {
     </ul>
     </li>                       
    <li>0.2.0 - support gradle for build; support all jetbrain products; bugfix no crash if image size differs</li>
-       <li>0.1.0 - first offical release - very bugy</li>"""
+   <li>0.1.0 - first offical release - very bugy</li>"""
 }
