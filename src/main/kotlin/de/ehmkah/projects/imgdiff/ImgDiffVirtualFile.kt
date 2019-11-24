@@ -11,37 +11,37 @@ import java.io.InputStream
 import java.io.OutputStream
 import javax.imageio.ImageIO
 
-
-class ImgDiffVirtualFile(bufferedImage: BufferedImage) : VirtualFile() {
-
-    val bufferedImage = bufferedImage
+/**
+ * @param baseFile - a file where diff depends on use for delivery valid points to jump to
+ */
+class ImgDiffVirtualFile(val bufferedImage: BufferedImage, val baseFile: VirtualFile) : VirtualFile() {
 
     override fun refresh(asynchronous: Boolean, recursive: Boolean, postRunnable: Runnable?) {
         TODO("anot implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getLength(): Long {
-        return 1000L;
+        return 1000L
     }
 
     override fun getFileSystem(): VirtualFileSystem {
-        return DummyFileSystem()
+        return baseFile.fileSystem
     }
 
     override fun getPath(): String {
-        return ""
+        return baseFile.path
     }
 
     override fun isDirectory(): Boolean {
-        return false;
+        return baseFile.isDirectory
     }
 
     override fun getTimeStamp(): Long {
-        return 20L;
+        return baseFile.timeStamp
     }
 
     override fun getName(): String {
-        return "the name"
+        return "diff.png"
     }
 
     override fun contentsToByteArray(): ByteArray {
@@ -49,11 +49,11 @@ class ImgDiffVirtualFile(bufferedImage: BufferedImage) : VirtualFile() {
         ImageIO.write(bufferedImage, "png", baos)
         val bytes = baos.toByteArray()
 
-        return bytes;
+        return bytes
     }
 
     override fun isValid(): Boolean {
-        return true;
+        return true
     }
 
     override fun getInputStream(): InputStream {
@@ -61,7 +61,7 @@ class ImgDiffVirtualFile(bufferedImage: BufferedImage) : VirtualFile() {
     }
 
     override fun getParent(): VirtualFile {
-        return this;
+        return baseFile.parent
     }
 
     override fun getChildren(): Array<VirtualFile> {
@@ -69,7 +69,7 @@ class ImgDiffVirtualFile(bufferedImage: BufferedImage) : VirtualFile() {
     }
 
     override fun isWritable(): Boolean {
-        TODO("mnot implemented") //To change body of created functions use File | Settings | File Templates.
+        return false
     }
 
     override fun getOutputStream(requestor: Any?, newModificationStamp: Long, newTimeStamp: Long): OutputStream {
@@ -77,6 +77,6 @@ class ImgDiffVirtualFile(bufferedImage: BufferedImage) : VirtualFile() {
     }
 
     override fun getFileType(): FileType {
-        return SvgFileType.INSTANCE
+        return baseFile.fileType
     }
 }
