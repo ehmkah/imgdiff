@@ -12,21 +12,10 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 == Usage
 
 * Open diff view of Intellij for two images
-
-=== New Behavior
-
 * You should see something like the following screenshot
-* image:screenshot_1_0_0.png[]
+* image:screenshot.png[]
 * Select "ImageDiff" and the diff will be displayed in the middle
 * If an image has been removed or added IntelliJ defaults behavior is used (you can't use imageDiff)
-
-=== Deprecated Behavior ===
-
-* You should see the small icon (red circle)
-* image:screenshot.png[]
-* Click icon or press ALT+F7 (shortcut)
-* Close dialog (press esc)
-* This behavior will be deleted soon
 
 == Development
 
