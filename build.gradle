@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '1.1.0'
+version '1.2.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -20,7 +20,12 @@ intellij {
 patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
-<ul> 
+<ul>
+    <li>1.2.0
+    <ul>
+        <li><a href="https://github.com/ehmkah/imgdiff/issues/xx">issue/xx</a> feature: tbd</li>
+    </ul>
+    </li>  
     <li>1.1.0
     <ul>
         <li><a href="https://github.com/ehmkah/imgdiff/issues/35">issue/35</a> bugfix: jump to source from imgDiff fixed</li>
