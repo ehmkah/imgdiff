@@ -23,7 +23,7 @@ patchPluginXml {
 <ul>
     <li>1.2.0
     <ul>
-        <li><a href="https://github.com/ehmkah/imgdiff/issues/xx">issue/xx</a> feature: tbd</li>
+        <li><a href="https://github.com/ehmkah/imgdiff/issues/33">issue/33</a> feature: removed old behavior</li>
     </ul>
     </li>  
     <li>1.1.0
