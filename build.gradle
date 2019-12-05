@@ -12,10 +12,11 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group:'com.nhaarman.mockitokotlin2', name: 'mockito-kotlin', version:'2.2.0'
 }
 
 intellij {
-    version '2019.1.2'
+    version '2019.3'
 }
 patchPluginXml {
     intellij.updateSinceUntilBuild false
@@ -24,6 +25,7 @@ patchPluginXml {
     <li>1.2.0
     <ul>
         <li><a href="https://github.com/ehmkah/imgdiff/issues/33">issue/33</a> feature: removed old behavior</li>
+        <li><a href="https://github.com/ehmkah/imgdiff/issues/40">issue/40</a> bugfix: show diff image for intellij 2019.3</li>
         <li>internal: upgrade to gradle 6.0.1</li>
     </ul>
     </li>  

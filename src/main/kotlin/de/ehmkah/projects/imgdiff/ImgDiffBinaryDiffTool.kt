@@ -26,14 +26,14 @@ class ImgDiffBinaryDiffTool : BinaryDiffTool() {
             val diffContent0 = request.contents[0]
             val diffContent1 = request.contents[1]
             if (diffContent0 is FileContentImpl && diffContent1 is FileContentImpl) {
-                return createImgDiffDiffViewer(request, context,diffContent0.file, diffContent1.file, request.contentTitles[0], request.contentTitles[1])
+                return createImgDiffDiffViewer(request, context, diffContent0.file, diffContent1.file, request.contentTitles[0], request.contentTitles[1])
             }
 
         }
         throw IllegalArgumentException(request.toString())
     }
 
-    private fun createImgDiffDiffViewer(request: ContentDiffRequest, context: DiffContext, filecontent0:VirtualFile, filecontent1: VirtualFile, contentTitle0: String, contentTitle1: String): ThreesideBinaryDiffViewer {
+    private fun createImgDiffDiffViewer(request: ContentDiffRequest, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String, contentTitle1: String): ThreesideBinaryDiffViewer {
         val bufferedImage0 = ImageIO.read(ByteArrayInputStream(filecontent0.contentsToByteArray()))
         val bufferedImage1 = ImageIO.read(ByteArrayInputStream(filecontent1.contentsToByteArray()))
         val differenceImage = diffedImageCreator.getDifferenceImage(bufferedImage0, bufferedImage1)
@@ -59,8 +59,15 @@ class ImgDiffBinaryDiffTool : BinaryDiffTool() {
         return false
     }
 
-    private fun isValidImage(diffContent: DiffContent): Boolean {
-        return diffContent !is EmptyContent && diffContent.contentType.toString().equals("Image")
+    fun isValidImage(diffContent: DiffContent): Boolean {
+        if (diffContent !is EmptyContent) {
+            val contentType = diffContent.contentType
+            if (contentType != null) {
+                return contentType.name.equals("Image")
+            }
+        }
+
+        return false
     }
 
     override fun getName(): String {
