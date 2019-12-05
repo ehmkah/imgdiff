@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group:'com.nhaarman.mockitokotlin2', name: 'mockito-kotlin', version:'2.2.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group:'com.nhaarman.mockitokotlin2', name: 'mockito-kotlin', version:'2.2.0'
 }
 
 intellij {
