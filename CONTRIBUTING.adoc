@@ -1,0 +1,11 @@
+If you want to contribute something: just do it. Open issue, Open pull-requests, Answer questions. 
+Do not ask to many questions upfront, do what you like and we will see where it will take us.
+
+Just to make things clear. If you made a contribution to the sourcecode I assume that 
+
+* you understand the https://github.com/ehmkah/imgdiff/blob/master/LICENSE[LICENSE] 
+* you know that you give your copyright to me
+
+I am happy to hear something from you.
+
+
