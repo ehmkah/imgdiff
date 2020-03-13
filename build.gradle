@@ -23,9 +23,9 @@ patchPluginXml {
     changeNotes """ 
 <ul>
    <li>1.4.0
-    <li>
-        <a href="https://github.com/ehmkah/imgdiff/issues/43">issue/43</a>bugfix: fixed compare images in directory
-    </li>
+    <li> <a href="https://github.com/ehmkah/imgdiff/issues/43">issue/43</a>bugfix: fixed compare images in directory </li>
+    <li>internal: upgrade to gradle 6.2</li>
+    
   </li>
     <li>1.3.0
     <ul>
