@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '1.4.0'
+version '1.5.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -22,6 +22,11 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>
+   <li>1.5.0
+     <ul>
+       <li></li>
+    </ul>
+   </li>
    <li>1.4.0
    <ul>
     <li><a href="https://github.com/ehmkah/imgdiff/issues/43">issue/43</a>bugfix: fixed compare images in directory </li>
