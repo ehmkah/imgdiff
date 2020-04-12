@@ -24,7 +24,8 @@ patchPluginXml {
 <ul>
    <li>1.4.0
    <ul>
-    <li> <a href="https://github.com/ehmkah/imgdiff/issues/43">issue/43</a>bugfix: fixed compare images in directory </li>
+    <li><a href="https://github.com/ehmkah/imgdiff/issues/43">issue/43</a>bugfix: fixed compare images in directory </li>
+    <li>internal: upgrade to intellij 2020.1</li>
     <li>internal: upgrade to gradle 6.3</li>
     <li>internal: updating used gradle-plugins</li>
      <li> <a href="https://github.com/ehmkah/imgdiff/issues/16">issue/16</a>internal: upgrade to junit 5.6</li>
