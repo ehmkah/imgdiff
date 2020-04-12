@@ -3,8 +3,6 @@ package de.ehmkah.projects.imgdiff
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.VirtualFileSystem
-import com.intellij.openapi.vfs.ex.dummy.DummyFileSystem
-import org.intellij.images.fileTypes.impl.SvgFileType
 import java.awt.image.BufferedImage
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
