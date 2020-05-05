@@ -1,18 +1,17 @@
 package de.ehmkah.projects.imgdiff
 
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.awt.image.BufferedImage
 import java.io.File
 import java.io.IOException
 import javax.imageio.ImageIO
 
-import org.junit.Assert.assertTrue
 class DiffedImageCreatorTest {
 
     private val sut = DiffedImageCreator()
 
     @Test
-    @Throws(Exception::class)
     fun testDiff() {
         val original = readImage("/original.png")
         val changed = readImage("/modified.png")
@@ -24,7 +23,6 @@ class DiffedImageCreatorTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun testDiffDiffer() {
         val original = readImage("/original.png")
         val changed = readImage("/modified.png")
@@ -36,19 +34,17 @@ class DiffedImageCreatorTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun testDiffDiffer2() {
         val original = readImage("/smallBlack.png")
         val changed = readImage("/smallBlackWithBorder.png")
 
         val actual = sut.getDifferenceImage(original, changed)
-        val expected = readImage("/smallBlackExpected.png")
+        val expected = readImage("/expectedSmallBlack.png")
 
         assertTrue(compareImages(expected, actual))
     }
 
     @Test
-    @Throws(Exception::class)
     fun testDifferentSize() {
         val original = readImage("/original.png")
         val changed = readImage("/modifiedDifferentSize.png")
@@ -60,7 +56,6 @@ class DiffedImageCreatorTest {
     }
 
     @Test
-    @Throws(IOException::class)
     fun testImagesHaveNoDiff() {
         val original = readImage("/identical.png")
         val changed = readImage("/identical.png")
@@ -72,7 +67,6 @@ class DiffedImageCreatorTest {
 
     }
 
-    @Throws(IOException::class)
     private fun readImage(resourcePath: String): BufferedImage {
         return ImageIO.read(DiffedImageCreatorTest::class.java.getResourceAsStream(resourcePath))
     }

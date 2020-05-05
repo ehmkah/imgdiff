@@ -4,7 +4,8 @@ import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 
 /**
- * stolen from https://stackoverflow.com/questions/25022578/highlight-differences-between-images and modified.
+ * stolen from https://stackoverflow.com/questions/25022578/highlight-differences-between-images
+ * and modified.
  *
  * @author Michael Krausse (ehmkah)
  */
