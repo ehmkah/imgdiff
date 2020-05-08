@@ -7,9 +7,7 @@ import com.nhaarman.mockitokotlin2.mock
 import org.junit.Test
 import kotlin.test.assertTrue
 
-internal class ImgDiffBinaryDiffToolTest {
-
-    private val sut = ImgDiffBinaryDiffTool()
+internal class ImgDiffBaseBinaryDiffToolTest {
 
     @Test
     fun testIsImage() {
@@ -20,7 +18,7 @@ internal class ImgDiffBinaryDiffToolTest {
         val request = mock<DiffContent> {
             on { contentType } doReturn contentTypeMock
         }
-        assertTrue(sut.isValidImage(request))
+        assertTrue(isValidImage(request))
     }
 
 }

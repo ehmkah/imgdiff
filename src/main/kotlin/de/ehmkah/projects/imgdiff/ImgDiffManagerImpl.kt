@@ -7,7 +7,8 @@ class ImgDiffManagerImpl : DiffManagerImpl() {
 
     override fun getDiffTools(): MutableList<DiffTool> {
         val diffTools = super.getDiffTools()
-        diffTools.add(0, ImgDiffBinaryDiffTool.instance)
+        diffTools.add(0, ImgDiffOriginalBackgroundBinaryDiffTool.instance)
+        diffTools.add(1, ImgDiffWhiteBackgroundBinaryDiffTool.instance)
 
         return diffTools;
     }

@@ -16,7 +16,7 @@ class DiffedImageCreatorTest {
         val original = readImage("/original.png")
         val changed = readImage("/modified.png")
 
-        val actual = sut.getDifferenceImage(original, changed)
+        val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
         val expected = readImage("/expected.png")
 
         assertTrue(compareImages(expected, actual))
@@ -27,7 +27,7 @@ class DiffedImageCreatorTest {
         val original = readImage("/original.png")
         val changed = readImage("/modified.png")
 
-        val actual = sut.getDifferenceImage(original, changed)
+        val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
         val expected = readImage("/expected.png")
 
         assertTrue(compareImages(expected, actual))
@@ -38,8 +38,19 @@ class DiffedImageCreatorTest {
         val original = readImage("/smallBlack.png")
         val changed = readImage("/smallBlackWithBorder.png")
 
-        val actual = sut.getDifferenceImage(original, changed)
+        val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
         val expected = readImage("/expectedSmallBlack.png")
+
+        assertTrue(compareImages(expected, actual))
+    }
+
+    @Test
+    fun testDiffOriginalAsBackround() {
+        val original = readImage("/smallBlack.png")
+        val changed = readImage("/smallBlackWithBorder.png")
+
+        val actual = sut.getDifferenceImageOriginalAsBackground(original, changed)
+        val expected = readImage("/expectedOriginalAsBackgroundDiff.png")
 
         assertTrue(compareImages(expected, actual))
     }
@@ -49,7 +60,7 @@ class DiffedImageCreatorTest {
         val original = readImage("/original.png")
         val changed = readImage("/modifiedDifferentSize.png")
 
-        val actual = sut.getDifferenceImage(original, changed)
+        val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
         val expected = readImage("/expectedDifferentSize.png")
 
         assertTrue(compareImages(expected, actual))
@@ -61,7 +72,7 @@ class DiffedImageCreatorTest {
         val changed = readImage("/identical.png")
         val expected = readImage("/identical.png")
 
-        val actual = sut.getDifferenceImage(original, changed)
+        val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
 
         assertTrue(compareImages(expected, actual))
 
@@ -75,25 +86,24 @@ class DiffedImageCreatorTest {
      * stolen from https://stackoverflow.com/questions/11006394/is-there-a-simple-way-to-compare-bufferedimage-instances
      */
     @Throws(IOException::class)
-    private fun compareImages(imgA: BufferedImage, imgB: BufferedImage): Boolean {
+    private fun compareImages(expectedImage: BufferedImage, actualImage: BufferedImage): Boolean {
 
-        ImageIO.write(imgA, "png", File("imgA.png"))
-        ImageIO.write(imgB, "png", File("imgB.png"))
+        ImageIO.write(expectedImage, "png", File("expectedImage.png"))
+        ImageIO.write(actualImage, "png", File("actualImage.png"))
 
         // The images must be the same size.
-        if (imgA.width != imgB.width || imgA.height != imgB.height) {
+        if (expectedImage.width != actualImage.width || expectedImage.height != actualImage.height) {
             return false
         }
 
-        val width = imgA.width
-        val height = imgA.height
+        val width = expectedImage.width
+        val height = expectedImage.height
 
         // Loop over every pixel.
         for (y in 0 until height) {
             for (x in 0 until width) {
                 // Compare the pixels for equality.
-                if (imgA.getRGB(x, y) != imgB.getRGB(x, y)) {
-
+                if (expectedImage.getRGB(x, y) != actualImage.getRGB(x, y)) {
                     return false
                 }
             }
