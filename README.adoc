@@ -14,7 +14,10 @@ https://plugins.jetbrains.com/plugin/12691-image-diff/
 * Open diff view of Intellij for two images
 * You should see something like the following screenshot
 * image:screenshot.png[]
-* Select "ImageDiff" and the diff will be displayed in the middle
+* Select "ImageDiff - White background"
+** Diff will be displayed in the middle, same pixel have color white
+* Select "ImageDiff - Original background"
+** Diff will be displayed in the middle, same pixel have color of original
 * If an image has been removed or added IntelliJ defaults behavior is used (you can't use imageDiff)
 
 == Development

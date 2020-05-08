@@ -24,6 +24,7 @@ patchPluginXml {
 <ul>
    <li>1.5.0
      <ul>
+       <li><a href="https://github.com/ehmkah/imgdiff/issues/26">issue/26</a>Show original image in diff as background</li> 
        <li>internal: upgrade dependencies</li>
     </ul>
    </li>
