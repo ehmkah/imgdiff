@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'de.ehmkah.projects'
-version '1.5.0'
+version '1.6.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -22,6 +22,11 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>
+   <li>1.6.0
+     <ul>
+       <li>nothing</li>
+    </ul>
+   </li>
    <li>1.5.0
      <ul>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/26">issue/26</a>feature: Show original image in diff as background.</li> 
