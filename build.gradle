@@ -1,6 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "1.3.72"
-    id 'org.jetbrains.intellij' version '0.4.19'
+    id 'org.jetbrains.intellij' version '0.4.21'
 }
 
 group 'de.ehmkah.projects'
@@ -16,7 +16,7 @@ dependencies {
 }
 
 intellij {
-    version '2020.1'
+    version '2020.2'
 }
 patchPluginXml {
     intellij.updateSinceUntilBuild false
@@ -24,7 +24,7 @@ patchPluginXml {
 <ul>
    <li>1.6.0
      <ul>
-       <li>nothing</li>
+       <li>internal: update dependencies and to intellij 2020.2</li>
     </ul>
    </li>
    <li>1.5.0
