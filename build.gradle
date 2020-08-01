@@ -24,7 +24,7 @@ patchPluginXml {
 <ul>
    <li>1.6.0
      <ul>
-       <li>internal: update dependencies and to intellij 2020.2</li>
+       <li>internal: update dependencies, update to intellij 2020.2, update gradle to 6.5.1</li>
     </ul>
    </li>
    <li>1.5.0
