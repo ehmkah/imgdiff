@@ -5,9 +5,8 @@ plugins {
 }
 
 
-
 group 'de.ehmkah.projects'
-version '1.6.0'
+version '1.7.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -25,6 +24,11 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>
+   <li>1.7.0
+     <ul>
+       <li>internal: update dependencies</li>
+    </ul>
+   </li>
    <li>1.6.0
      <ul>
        <li>internal: update dependencies</li>
