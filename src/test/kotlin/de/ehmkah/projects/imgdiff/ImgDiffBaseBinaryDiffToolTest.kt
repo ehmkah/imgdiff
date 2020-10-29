@@ -1,24 +1,46 @@
 package de.ehmkah.projects.imgdiff
 
 import com.intellij.diff.contents.DiffContent
+import com.intellij.diff.contents.FileContentImpl
 import com.intellij.openapi.fileTypes.FileType
+import com.intellij.openapi.vfs.VirtualFile
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Test
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 internal class ImgDiffBaseBinaryDiffToolTest {
 
     @Test
     fun testIsImage() {
+        val request = prepareMocks("/original.png")
+
+        assertTrue(isValidImage(request))
+    }
+
+    @Test
+    fun testDetectContentIsCorruptImage() {
+        val request = prepareMocks("/NotAnImage.png")
+
+        assertFalse(isValidImage(request))
+    }
+
+    private fun prepareMocks(imageFile: String): FileContentImpl {
         val contentTypeMock = mock<FileType> {
             on { name } doReturn "Image"
         }
 
-        val request = mock<DiffContent> {
-            on { contentType } doReturn contentTypeMock
+        val inputStream = ImgDiffBaseBinaryDiffToolTest::class.java.getResourceAsStream(imageFile)
+        val mockedFile = mock<VirtualFile> {
+            on { getInputStream() } doReturn inputStream
         }
-        assertTrue(isValidImage(request))
+
+        val request = mock<FileContentImpl> {
+            on { contentType } doReturn contentTypeMock
+            on { file } doReturn mockedFile
+        }
+        return request
     }
 
 }

@@ -13,7 +13,7 @@ import com.intellij.openapi.fileEditor.OpenFileDescriptor
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import java.awt.image.BufferedImage
-import java.io.ByteArrayInputStream
+import java.io.InputStream
 import javax.imageio.ImageIO
 
 abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
@@ -44,8 +44,8 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
     }
 
     private fun createImgDiffDiffViewer(request: ContentDiffRequest, project: Project?, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String?, contentTitle1: String?): ThreesideBinaryDiffViewer {
-        val bufferedImage0 = ImageIO.read(ByteArrayInputStream(filecontent0.contentsToByteArray()))
-        val bufferedImage1 = ImageIO.read(ByteArrayInputStream(filecontent1.contentsToByteArray()))
+        val bufferedImage0 = ImageIO.read(filecontent0.inputStream)
+        val bufferedImage1 = ImageIO.read(filecontent1.inputStream)
         val differenceImage = createDiffImage(bufferedImage0, bufferedImage1)
         val diffContent0 = FileContentImpl(project, filecontent0)
         val diffContent1 = FileContentImpl(project, filecontent1)
@@ -79,10 +79,18 @@ fun isValidImage(diffContent: DiffContent): Boolean {
     if (diffContent !is EmptyContent) {
         val contentType = diffContent.contentType
         if (contentType != null) {
-            return contentType.name.equals("Image")
+            if (contentType.name.equals("Image") && diffContent is FileContentImpl) {
+                return contentCanBeRead(diffContent.file.inputStream)
+            }
         }
     }
 
     return false
+}
+
+fun contentCanBeRead(inputStream: InputStream?): Boolean {
+    val readImage = ImageIO.read(inputStream)
+
+    return readImage != null
 }
 
