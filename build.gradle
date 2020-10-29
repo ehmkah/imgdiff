@@ -26,7 +26,7 @@ patchPluginXml {
 <ul>
    <li>1.7.0
      <ul>
-       <li>https://github.com/ehmkah/imgdiff/issues/52">issue/52</a> bugfix: no crash if image can not be read
+       <li><a href="https://github.com/ehmkah/imgdiff/issues/52">issue/52</a> bugfix: no crash if image can not be read
        <li>internal: update dependencies</li>
     </ul>
    </li>
