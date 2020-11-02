@@ -5,7 +5,7 @@ plugins {
 
 
 group 'de.ehmkah.projects'
-version '1.7.0'
+version '1.8.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -23,6 +23,11 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>
+    <li>1.8.0
+     <ul>
+       <li><a href=""></a>to be filled
+    </ul>
+   </li>
    <li>1.7.0
      <ul>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/52">issue/52</a> bugfix: no crash if image can not be read
