@@ -58,7 +58,7 @@ class ImgDiffVirtualFile(val bufferedImage: BufferedImage, val baseFile: Virtual
         TODO("jnot implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getParent(): VirtualFile {
+    override fun getParent(): VirtualFile? {
         return baseFile.parent
     }
 
