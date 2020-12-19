@@ -25,7 +25,7 @@ patchPluginXml {
 <ul>
     <li>1.8.0
      <ul>
-       <li><a href=""></a>to be filled</li>
+       <li><a href="https://github.com/ehmkah/imgdiff/issues/56">56</a>bugfix if baseparent is null</li>
        <li>update to intellij 2020.3 and update used gradle versions</li>
     </ul>
    </li>
