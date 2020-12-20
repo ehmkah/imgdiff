@@ -5,7 +5,7 @@ plugins {
 
 
 group 'de.ehmkah.projects'
-version '1.8.0'
+version '1.9.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -23,6 +23,10 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>
+    <li>1.9.0
+     <ul>
+       <li><a href=""></a>to be filled</li>
+    </ul>
     <li>1.8.0
      <ul>
        <li>Plugin build with java11 and needs idea version at least 202 (e.g. IntelliJ 2020.3)</li>
