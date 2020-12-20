@@ -44,10 +44,11 @@ class ImgDiffVirtualFile(val bufferedImage: BufferedImage, val baseFile: Virtual
 
     override fun contentsToByteArray(): ByteArray {
         val baos = ByteArrayOutputStream()
-        ImageIO.write(bufferedImage, "png", baos)
-        val bytes = baos.toByteArray()
-
-        return bytes
+        baos.use {
+            ImageIO.write(bufferedImage, "png", baos)
+            val bytes = baos.toByteArray()
+            return bytes
+        }
     }
 
     override fun isValid(): Boolean {

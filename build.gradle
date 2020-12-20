@@ -25,6 +25,7 @@ patchPluginXml {
 <ul>
     <li>1.8.0
      <ul>
+       <li>Plugin build with java11 and needs idea version at least 202 (e.g. IntelliJ 2020.3)</li>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/56">56</a>bugfix if baseparent is null</li>
        <li>update to intellij 2020.3 and update used gradle versions</li>
     </ul>
@@ -113,3 +114,6 @@ patchPluginXml {
    <li>0.2.0 - support gradle for build; support all jetbrain products; bugfix no crash if image size differs</li>
    <li>0.1.0 - first offical release - very bugy</li>"""
 }
+
+// Workaround because of https://youtrack.jetbrains.com/issue/KT-42837
+buildSearchableOptions.enabled=false
