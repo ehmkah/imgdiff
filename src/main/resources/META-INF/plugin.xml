@@ -19,6 +19,11 @@
     />
   </extensions>
 
-  <actions/>
+  <actions>
+    <action id="MotivateAction" class="de.ehmkah.projects.imgdiff.MotivateAction" text="Motivate Me">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt M"/>
+    </action>
+  </actions>
 
 </idea-plugin>

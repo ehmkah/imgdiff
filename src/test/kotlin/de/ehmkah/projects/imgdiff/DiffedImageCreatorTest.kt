@@ -68,8 +68,8 @@ class DiffedImageCreatorTest {
 
     @Test
     fun testImagesHaveNoDiff() {
-        val original = readImage("/identical.png")
-        val changed = readImage("/identical.png")
+        val original = readImage("/two.png")
+        val changed = readImage("/one.png")
         val expected = readImage("/identical.png")
 
         val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
