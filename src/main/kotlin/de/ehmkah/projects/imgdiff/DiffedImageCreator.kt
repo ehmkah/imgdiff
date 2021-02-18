@@ -1,8 +1,14 @@
 package de.ehmkah.projects.imgdiff
 
+import com.squareup.gifencoder.*
+import com.squareup.gifencoder.Image
 import java.awt.Color
 import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
+
+import java.io.FileOutputStream
+import java.io.OutputStream
+
 
 /**
  * stolen from https://stackoverflow.com/questions/25022578/highlight-differences-between-images
@@ -100,5 +106,33 @@ class DiffedImageCreator {
                 currentWidth > img1.width - 1 || currentWidth > img2.width - 1
     }
 
+    fun createGifImage(original: BufferedImage, changed: BufferedImage): Unit {
+        val diff: BufferedImage = getDifferenceImageOriginalAsBackground(original, changed);
+        val width: Int = original.width
+        val height: Int = original.height
+
+        val originalRGBData: Array<IntArray> = Array(height) { IntArray(width) { 0 } }
+        val diffRGBData: Array<IntArray> = Array(height) { IntArray(width) { 0 } }
+        for (y in 0 until height) {
+            for (x in 0 until width) {
+                originalRGBData[y][x] = original.getRGB(x, y)
+                diffRGBData[y][x] = diff.getRGB(x, y)
+            }
+        }
+
+        val outputStream: OutputStream = FileOutputStream("test.png")
+        val options = ImageOptions()
+
+        GifEncoder(outputStream, width, height, -1)
+                .addImage(originalRGBData, options)
+                .addImage(diffRGBData, options)
+                .finishEncoding()
+        outputStream.close()
+
+    }
 
 }
+
+
+
+

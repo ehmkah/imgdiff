@@ -78,6 +78,14 @@ class DiffedImageCreatorTest {
 
     }
 
+    @Test
+    fun testGifCreation() {
+        val original  = readImage("/original.png");
+        val changed = readImage("/modified.png");
+        val actual = sut.createGifImage(original, changed);
+
+    }
+
     private fun readImage(resourcePath: String): BufferedImage {
         return ImageIO.read(DiffedImageCreatorTest::class.java.getResourceAsStream(resourcePath))
     }
