@@ -9,20 +9,12 @@ import com.intellij.diff.requests.DiffRequest
 import com.intellij.diff.requests.SimpleDiffRequest
 import com.intellij.diff.tools.binary.BinaryDiffTool
 import com.intellij.diff.tools.binary.ThreesideBinaryDiffViewer
-import com.intellij.openapi.actionSystem.AnAction
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.fileEditor.OpenFileDescriptor
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.ui.DialogBuilder
 import com.intellij.openapi.vfs.VirtualFile
-import java.awt.BorderLayout
 import java.awt.image.BufferedImage
 import java.io.InputStream
 import javax.imageio.ImageIO
-import javax.swing.Icon
-import javax.swing.ImageIcon
-import javax.swing.JLabel
-import javax.swing.JPanel
 
 abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
 
@@ -32,7 +24,6 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
 
             val diffContent0 = request.contents[0]
             val diffContent1 = request.contents[1]
-
             if (diffContent0 is FileContentImpl && diffContent1 is FileContentImpl) {
                 return createImgDiffDiffViewer(request, project, context, diffContent0.file, diffContent1.file, request.contentTitles[0], request.contentTitles[1])
             }
@@ -52,7 +43,7 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
         return null
     }
 
-    private fun createImgDiffDiffViewer(request: ContentDiffRequest, project: Project?, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String?, contentTitle1: String?): ThreesideBinaryDiffViewer {
+    protected open fun createImgDiffDiffViewer(request: ContentDiffRequest, project: Project?, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String?, contentTitle1: String?): ThreesideBinaryDiffViewer {
         val bufferedImage0 = ImageIO.read(filecontent0.inputStream)
         val bufferedImage1 = ImageIO.read(filecontent1.inputStream)
         val differenceImage = createDiffImage(bufferedImage0, bufferedImage1)
@@ -65,24 +56,9 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
                 diffContent0, diffContentDifference, diffContent1,
                 contentTitle0, "Diff Image", contentTitle1)
 
-        val result = ImgDiffViewer(context, myRequest)
-        result.foo()
+        val result = ThreesideBinaryDiffViewer(context, myRequest)
 
         return result
-    }
-
-    fun foo(project: Project) {
-        val panel = JPanel()
-        panel.layout = BorderLayout()
-        val icon: Icon = ImageIcon(javaClass.getResource("/example3.gif"))
-        val label = JLabel("", icon, JLabel.CENTER)
-        panel.add(label)
-        val builder = DialogBuilder(project)
-        builder.setCenterPanel(panel)
-        builder.setDimensionServiceKey("FrameSwitcherCloseProjects")
-        builder.setTitle("Motivational GIF")
-        builder.removeAllActions()
-        builder.show()
     }
 
     abstract fun createDiffImage(bufferedImage0: BufferedImage, bufferedImage1: BufferedImage): BufferedImage

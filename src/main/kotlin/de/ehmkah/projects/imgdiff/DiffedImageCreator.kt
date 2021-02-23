@@ -1,13 +1,12 @@
 package de.ehmkah.projects.imgdiff
 
-import com.squareup.gifencoder.*
-import com.squareup.gifencoder.Image
+import com.squareup.gifencoder.GifEncoder
+import com.squareup.gifencoder.ImageOptions
 import java.awt.Color
 import java.awt.image.BufferedImage
-import javax.imageio.ImageIO
-
-import java.io.FileOutputStream
 import java.io.OutputStream
+import java.util.concurrent.TimeUnit
+import javax.imageio.ImageIO
 
 
 /**
@@ -23,12 +22,12 @@ class DiffedImageCreator {
     private val PIXELD_OUT_OF_BOUNDS_VALUE = 16711680
 
     fun getDifferenceImageWhiteAsBackground(original: BufferedImage, changed: BufferedImage): BufferedImage {
-        var backgroundColor = { _: Int, _: Int -> PIXEL_HAVE_SAME_VALUE }
+        val backgroundColor = { _: Int, _: Int -> PIXEL_HAVE_SAME_VALUE }
         return getDifferenceImage(original, changed, backgroundColor, PIXEL_HAVE_DIFFERENT_VALUE)
     }
 
     fun getDifferenceImageOriginalAsBackground(original: BufferedImage, changed: BufferedImage): BufferedImage {
-        var backgroundColor = { x: Int, y: Int -> getPixelValueOrEmpty(original, x, y) }
+        val backgroundColor = { x: Int, y: Int -> getPixelValueOrEmpty(original, x, y) }
         return getDifferenceImage(original, changed, backgroundColor, 16711680)
     }
 
@@ -106,8 +105,8 @@ class DiffedImageCreator {
                 currentWidth > img1.width - 1 || currentWidth > img2.width - 1
     }
 
-    fun createGifImage(original: BufferedImage, changed: BufferedImage): Unit {
-        val diff: BufferedImage = getDifferenceImageOriginalAsBackground(original, changed);
+    fun createGifImage(original: BufferedImage, changed: BufferedImage, outputStream: OutputStream) {
+        val diff: BufferedImage = getDifferenceImageOriginalAsBackground(original, changed)
         val width: Int = original.width
         val height: Int = original.height
 
@@ -120,15 +119,13 @@ class DiffedImageCreator {
             }
         }
 
-        val outputStream: OutputStream = FileOutputStream("test.png")
         val options = ImageOptions()
+        options.setDelay(1, TimeUnit.SECONDS)
 
         GifEncoder(outputStream, width, height, -1)
                 .addImage(originalRGBData, options)
                 .addImage(diffRGBData, options)
                 .finishEncoding()
-        outputStream.close()
-
     }
 
 }

@@ -1,15 +1,15 @@
 package de.ehmkah.projects.imgdiff
 
-import com.intellij.openapi.actionSystem.AnAction
-import com.intellij.openapi.ui.DialogBuilder
-import java.awt.BorderLayout
-import java.awt.Graphics
-import java.awt.Image
+import com.intellij.diff.DiffContext
+import com.intellij.diff.contents.FileContentImpl
+import com.intellij.diff.requests.ContentDiffRequest
+import com.intellij.diff.requests.SimpleDiffRequest
+import com.intellij.diff.tools.binary.ThreesideBinaryDiffViewer
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.vfs.VirtualFile
 import java.awt.image.BufferedImage
-import javax.swing.Icon
-import javax.swing.ImageIcon
-import javax.swing.JLabel
-import javax.swing.JPanel
+import java.io.ByteArrayOutputStream
+import javax.imageio.ImageIO
 
 class ImgDiffBlinkingDiffTool : ImgDiffBaseBinaryDiffTool() {
 
@@ -19,30 +19,35 @@ class ImgDiffBlinkingDiffTool : ImgDiffBaseBinaryDiffTool() {
         val instance = ImgDiffBlinkingDiffTool()
     }
 
-    override fun createDiffImage(bufferedImage0: BufferedImage, bufferedImage1: BufferedImage): BufferedImage {
-        val icon = ImageIcon(javaClass.getResource("/example3.gif"))
-        val image: Image = icon.image
+    override fun createImgDiffDiffViewer(request: ContentDiffRequest, project: Project?, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String?, contentTitle1: String?): ThreesideBinaryDiffViewer {
+        val bufferedImage0 = ImageIO.read(filecontent0.inputStream)
+        val bufferedImage1 = ImageIO.read(filecontent1.inputStream)
+        val differenceImage = bufferedImage0
+        val diffContent0 = FileContentImpl(project, filecontent0)
+        val diffContent1 = FileContentImpl(project, filecontent1)
 
-        // Create empty BufferedImage, sized to Image
+        val diffContentDifference = FileContentImpl(project, ImgDiffVirtualFile(differenceImage, filecontent0))
 
-        // Create empty BufferedImage, sized to Image
-        val buffImage = BufferedImage(
-                image.getWidth(null),
-                image.getHeight(null),
-                BufferedImage.TYPE_INT_ARGB)
+        val myRequest = SimpleDiffRequest(request.title,
+                diffContent0, diffContentDifference, diffContent1,
+                contentTitle0, "Diff Image", contentTitle1)
 
-        // Draw Image into BufferedImage
+        val result = ImgDiffViewer(context, myRequest)
+        val outputStream = ByteArrayOutputStream()
 
-        // Draw Image into BufferedImage
-        val g: Graphics = buffImage.graphics
-        g.drawImage(image, 0, 0, null)
-        return buffImage
+        diffedImageCreator.createGifImage(bufferedImage0, bufferedImage1, outputStream)
+
+        result.foo(outputStream.toByteArray())
+
+        return result
     }
 
+    override fun createDiffImage(bufferedImage0: BufferedImage, bufferedImage1: BufferedImage): BufferedImage {
+        return bufferedImage0
 
-
+    }
 
     override fun getName(): String {
-        return "ImageDiff - Blinking Diff"
+        return "ImageDiff - Blinking Diff (experimental)"
     }
 }

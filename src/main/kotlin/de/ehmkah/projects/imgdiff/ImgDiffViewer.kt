@@ -14,19 +14,19 @@ import javax.swing.JPanel
 
 class ImgDiffViewer(context: @NotNull DiffContext, request: @NotNull DiffRequest) : ThreesideBinaryDiffViewer(context, request) {
 
-    fun foo() {
+    fun foo(imageData: ByteArray) {
         val component: ThreeDiffSplitter = myContentPanel.getComponent(0) as ThreeDiffSplitter
-        val aContentPanel = component.getComponent(3) as JPanel;
+        val aContentPanel = component.getComponent(3) as JPanel
         while (aContentPanel.componentCount>0) {
             aContentPanel.remove(0)
         }
-        fooIntern(aContentPanel)
+        fooIntern(aContentPanel, imageData)
     }
 
 
-    fun fooIntern(panel: JPanel) {
+    fun fooIntern(panel: JPanel, imageData: ByteArray) {
         panel.layout = BorderLayout()
-        val icon: Icon = ImageIcon(javaClass.getResource("/example3.gif"))
+        val icon: Icon = ImageIcon(imageData)
         val label = JLabel("", icon, JLabel.CENTER)
 
         panel.add(label)
