@@ -28,7 +28,7 @@ patchPluginXml {
     <li>1.9.0
      <ul>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/60">60</a>Spot differences easier with blinking diff. Experimental feature, feedback welcome if
-       it works strange for your work. Thanks to https://github.com/grigala for helping to build it. </li>
+       it works strange for your work. Thanks to <a href="https://github.com/grigala">George Grigalashvili</a> for helping to build it. </li>
     </ul>
     <li>1.8.0
      <ul>
