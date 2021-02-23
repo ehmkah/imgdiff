@@ -107,14 +107,16 @@ class DiffedImageCreator {
 
     fun createGifImage(original: BufferedImage, changed: BufferedImage, outputStream: OutputStream) {
         val diff: BufferedImage = getDifferenceImageOriginalAsBackground(original, changed)
-        val width: Int = original.width
-        val height: Int = original.height
+        val width: Int = diff.width
+        val height: Int = diff.height
 
         val originalRGBData: Array<IntArray> = Array(height) { IntArray(width) { 0 } }
         val diffRGBData: Array<IntArray> = Array(height) { IntArray(width) { 0 } }
         for (y in 0 until height) {
             for (x in 0 until width) {
-                originalRGBData[y][x] = original.getRGB(x, y)
+                if (x < original.width && y < original.height) {
+                    originalRGBData[y][x] = original.getRGB(x, y)
+                }
                 diffRGBData[y][x] = diff.getRGB(x, y)
             }
         }
