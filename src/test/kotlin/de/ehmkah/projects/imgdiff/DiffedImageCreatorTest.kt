@@ -85,8 +85,8 @@ class DiffedImageCreatorTest {
     @Test
     fun testGifCreation() {
         val outputStream = ByteArrayOutputStream()
-        val original = readImage("/original.png")
-        val changed = readImage("/modified.png")
+        val original = readImage("/one.png")
+        val changed = readImage("/two.png")
         sut.createGifImage(original, changed, outputStream)
         outputStream.close()
         Files.write(Paths.get("actual.gif"), outputStream.toByteArray())

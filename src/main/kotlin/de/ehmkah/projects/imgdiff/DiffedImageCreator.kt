@@ -15,11 +15,12 @@ import javax.imageio.ImageIO
  *
  * @author Michael Krausse (ehmkah)
  */
-class DiffedImageCreator {
 
-    private val PIXEL_HAVE_SAME_VALUE = 16777215
-    private val PIXEL_HAVE_DIFFERENT_VALUE = 13294074
-    private val PIXELD_OUT_OF_BOUNDS_VALUE = 16711680
+const val PIXEL_HAVE_SAME_VALUE = 16777215
+const val PIXEL_HAVE_DIFFERENT_VALUE = 13294074
+const val PIXEL_OUT_OF_BOUNDS_VALUE = 16711680
+
+class DiffedImageCreator {
 
     fun getDifferenceImageWhiteAsBackground(original: BufferedImage, changed: BufferedImage): BufferedImage {
         val backgroundColor = { _: Int, _: Int -> PIXEL_HAVE_SAME_VALUE }
@@ -65,7 +66,7 @@ class DiffedImageCreator {
                 var diff: Int
                 var diffPixel: Int
                 if (pixelOutOfBounds(currentHeight, currentWidth, original, changed)) {
-                    diffPixel = PIXELD_OUT_OF_BOUNDS_VALUE
+                    diffPixel = PIXEL_OUT_OF_BOUNDS_VALUE
                     imagesAreIdentical = false
                 } else {
                     val rgb1 = original.getRGB(currentWidth, currentHeight)
@@ -106,6 +107,7 @@ class DiffedImageCreator {
     }
 
     fun createGifImage(original: BufferedImage, changed: BufferedImage, outputStream: OutputStream) {
+        //outputStream.write(javaClass.getResource("/actual.gif").readBytes())
         val diff: BufferedImage = getDifferenceImageOriginalAsBackground(original, changed)
         val width: Int = diff.width
         val height: Int = diff.height
@@ -121,8 +123,7 @@ class DiffedImageCreator {
             }
         }
 
-        val options = ImageOptions()
-        options.setDelay(1, TimeUnit.SECONDS)
+        val options = ImageOptions().setDelay(1, TimeUnit.SECONDS).setColorQuantizer(ColorQuantifizer())
 
         GifEncoder(outputStream, width, height, -1)
                 .addImage(originalRGBData, options)

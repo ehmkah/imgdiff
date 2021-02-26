@@ -37,7 +37,7 @@ class ImgDiffBlinkingDiffTool : ImgDiffBaseBinaryDiffTool() {
 
         diffedImageCreator.createGifImage(bufferedImage0, bufferedImage1, outputStream)
 
-        result.foo(outputStream.toByteArray())
+        result.showBlinkingDiff(outputStream.toByteArray())
 
         return result
     }
