@@ -107,7 +107,6 @@ class DiffedImageCreator {
     }
 
     fun createGifImage(original: BufferedImage, changed: BufferedImage, outputStream: OutputStream) {
-        //outputStream.write(javaClass.getResource("/actual.gif").readBytes())
         val diff: BufferedImage = getDifferenceImageOriginalAsBackground(original, changed)
         val width: Int = diff.width
         val height: Int = diff.height
