@@ -5,7 +5,6 @@ import org.junit.Test
 import java.awt.image.BufferedImage
 import java.io.ByteArrayOutputStream
 import java.io.File
-import java.io.FileWriter
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -72,8 +71,8 @@ class DiffedImageCreatorTest {
 
     @Test
     fun testImagesHaveNoDiff() {
-        val original = readImage("/two.png")
-        val changed = readImage("/one.png")
+        val original = readImage("/identical.png")
+        val changed = readImage("/identical.png")
         val expected = readImage("/identical.png")
 
         val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)

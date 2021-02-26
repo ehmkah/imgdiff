@@ -12,16 +12,11 @@ import java.awt.event.ActionListener
 import javax.swing.*
 import javax.swing.BoxLayout
 
-import javax.swing.JPanel
-
-
-
-
 
 /**
  * Experimentel code.
  *
- * Remove elemets which are not needed for Blinking and replacing with elements which are needed.
+ * Remove elements which are not needed for Blinking and replacing with elements which are needed.
  * Hopefully this implementation does not break to often :-P
  *
  */
