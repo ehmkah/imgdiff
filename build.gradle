@@ -12,6 +12,8 @@ repositories {
 }
 
 dependencies {
+    compile 'com.squareup:gifencoder:0.10.1'
+    
     testImplementation('org.junit.jupiter:junit-jupiter:5.7.0')
     testImplementation('com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0')
 }
@@ -25,7 +27,8 @@ patchPluginXml {
 <ul>
     <li>1.9.0
      <ul>
-       <li><a href=""></a>to be filled</li>
+       <li><a href="https://github.com/ehmkah/imgdiff/issues/60">60</a>Spot differences easier with blinking diff. Experimental feature, feedback welcome if
+       it works strange for your work. Thanks to <a href="https://github.com/grigala">George Grigalashvili</a> for helping to build it. </li>
     </ul>
     <li>1.8.0
      <ul>

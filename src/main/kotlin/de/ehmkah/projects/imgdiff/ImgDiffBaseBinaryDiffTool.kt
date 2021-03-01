@@ -43,7 +43,7 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
         return null
     }
 
-    private fun createImgDiffDiffViewer(request: ContentDiffRequest, project: Project?, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String?, contentTitle1: String?): ThreesideBinaryDiffViewer {
+    protected open fun createImgDiffDiffViewer(request: ContentDiffRequest, project: Project?, context: DiffContext, filecontent0: VirtualFile, filecontent1: VirtualFile, contentTitle0: String?, contentTitle1: String?): ThreesideBinaryDiffViewer {
         val bufferedImage0 = ImageIO.read(filecontent0.inputStream)
         val bufferedImage1 = ImageIO.read(filecontent1.inputStream)
         val differenceImage = createDiffImage(bufferedImage0, bufferedImage1)

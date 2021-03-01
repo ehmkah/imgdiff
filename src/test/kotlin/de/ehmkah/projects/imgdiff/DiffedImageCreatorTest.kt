@@ -3,8 +3,11 @@ package de.ehmkah.projects.imgdiff
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.awt.image.BufferedImage
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
+import java.nio.file.Files
+import java.nio.file.Paths
 import javax.imageio.ImageIO
 
 class DiffedImageCreatorTest {
@@ -76,6 +79,19 @@ class DiffedImageCreatorTest {
 
         assertTrue(compareImages(expected, actual))
 
+    }
+
+    // The result if this test have to be tested manually
+    @Test
+    fun testGifCreation() {
+        val outputStream = ByteArrayOutputStream()
+        outputStream.use {
+            val original = readImage("/one.png")
+            val changed = readImage("/two.png")
+            sut.createGifImage(original, changed, outputStream)
+            outputStream.close()
+            Files.write(Paths.get("actual.gif"), outputStream.toByteArray())
+        }
     }
 
     private fun readImage(resourcePath: String): BufferedImage {
