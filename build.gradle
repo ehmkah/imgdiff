@@ -5,7 +5,7 @@ plugins {
 
 
 group 'de.ehmkah.projects'
-version '1.9.0'
+version '1.10.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -25,6 +25,11 @@ patchPluginXml {
     intellij.updateSinceUntilBuild false
     changeNotes """ 
 <ul>
+    <li>1.10.0
+     <ul>
+       <li><a href=""></a></li>
+    </ul>
+    <li>
     <li>1.9.0
      <ul>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/60">60</a>Spot differences easier with blinking diff. Experimental feature, feedback welcome if
