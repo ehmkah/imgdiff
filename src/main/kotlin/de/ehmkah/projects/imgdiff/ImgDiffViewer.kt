@@ -35,7 +35,7 @@ class ImgDiffViewer(context: @NotNull DiffContext, request: @NotNull DiffRequest
 
     fun addBlinkingDiff(panel: JPanel, imageData: ByteArray) {
         panel.layout = BorderLayout()
-        val label = JLabel("If you can see the complete diff, just click on the (hopefully blinking image). ")
+        val label = JLabel("If you can't see the complete diff, just click on the (hopefully blinking image). ")
         val icon: Icon = ImageIcon(imageData)
         val button = JButton(icon)
         val actionListener = createActionListener(icon)
@@ -45,7 +45,7 @@ class ImgDiffViewer(context: @NotNull DiffContext, request: @NotNull DiffRequest
         panel.add(button)
     }
 
-    private fun createActionListener(icon: Icon): ActionListener? {
+    private fun createActionListener(icon: Icon): ActionListener {
         val result = object : ActionListener {
 
             override fun actionPerformed(e: ActionEvent?) {
@@ -56,7 +56,7 @@ class ImgDiffViewer(context: @NotNull DiffContext, request: @NotNull DiffRequest
                 val builder = DialogBuilder(project)
                 builder.setCenterPanel(panel)
                 builder.setDimensionServiceKey("FrameSwitcherCloseProjects")
-                builder.setTitle("Details view for image")
+                builder.setTitle("Details View For Image")
                 builder.removeAllActions()
                 builder.show()
             }

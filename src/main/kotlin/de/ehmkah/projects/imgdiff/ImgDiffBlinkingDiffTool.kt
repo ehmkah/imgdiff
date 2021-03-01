@@ -30,14 +30,14 @@ class ImgDiffBlinkingDiffTool : ImgDiffBaseBinaryDiffTool() {
 
         val myRequest = SimpleDiffRequest(request.title,
                 diffContent0, diffContentDifference, diffContent1,
-                contentTitle0, "Diff Image", contentTitle1)
+                contentTitle0, "Diff image", contentTitle1)
 
         val result = ImgDiffViewer(context, myRequest)
         val outputStream = ByteArrayOutputStream()
-
-        diffedImageCreator.createGifImage(bufferedImage0, bufferedImage1, outputStream)
-
-        result.showBlinkingDiff(outputStream.toByteArray())
+        outputStream.use {
+            diffedImageCreator.createGifImage(bufferedImage0, bufferedImage1, outputStream)
+            result.showBlinkingDiff(outputStream.toByteArray())
+        }
 
         return result
     }

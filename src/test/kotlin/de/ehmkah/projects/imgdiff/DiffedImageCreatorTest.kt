@@ -81,14 +81,17 @@ class DiffedImageCreatorTest {
 
     }
 
+    // The result if this test have to be tested manually
     @Test
     fun testGifCreation() {
         val outputStream = ByteArrayOutputStream()
-        val original = readImage("/one.png")
-        val changed = readImage("/two.png")
-        sut.createGifImage(original, changed, outputStream)
-        outputStream.close()
-        Files.write(Paths.get("actual.gif"), outputStream.toByteArray())
+        outputStream.use {
+            val original = readImage("/one.png")
+            val changed = readImage("/two.png")
+            sut.createGifImage(original, changed, outputStream)
+            outputStream.close()
+            Files.write(Paths.get("actual.gif"), outputStream.toByteArray())
+        }
     }
 
     private fun readImage(resourcePath: String): BufferedImage {

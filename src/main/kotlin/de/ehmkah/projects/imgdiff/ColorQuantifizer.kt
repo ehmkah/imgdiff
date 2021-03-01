@@ -2,8 +2,8 @@ package de.ehmkah.projects.imgdiff
 
 import com.squareup.gifencoder.Color
 import com.squareup.gifencoder.ColorQuantizer
-import com.squareup.gifencoder.MedianCutQuantizer
 import com.squareup.gifencoder.Multiset
+import com.squareup.gifencoder.UniformQuantizer
 
 /**
  * Transforms all colors which are used in the original image to gif-compatible subset.
@@ -13,7 +13,7 @@ class ColorQuantifizer : ColorQuantizer {
 
     override fun quantize(originalColors: Multiset<Color>?, maxColorCount: Int): MutableSet<Color> {
         val result = HashSet<Color>()
-        result.addAll(MedianCutQuantizer.INSTANCE.quantize(originalColors, maxColorCount - 3))
+        result.addAll(UniformQuantizer.INSTANCE.quantize(originalColors, maxColorCount - 3))
         addImageDiffColorsToGifColorMap(result)
 
         return result
