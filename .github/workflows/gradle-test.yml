@@ -18,3 +18,5 @@ jobs:
     - name: Build with Gradle
       run: gradle build
 
+    - name: ls
+      run: ls build/
