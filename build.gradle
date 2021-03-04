@@ -28,6 +28,7 @@ patchPluginXml {
     <li>1.10.0
      <ul>
        <li><a href=""></a></li>
+       <li>internal: moving CI from travis to github-actions</li>
     </ul>
     <li>
     <li>1.9.0
