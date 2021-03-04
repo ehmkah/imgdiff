@@ -21,4 +21,8 @@ jobs:
 
     - name: Build with Gradle
       run: gradle build
+      env:
+        DEFAULT_BRANCH: github_actions
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
