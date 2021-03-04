@@ -2,6 +2,7 @@ package de.ehmkah.projects.imgdiff;
 
 
 import org.junit.Test
+import org.junit.jupiter.api.Assertions
 
 class ImgDiffDiffViewerTest {
 
@@ -14,7 +15,7 @@ class ImgDiffDiffViewerTest {
         // val actualCanShowRequest = canShowRequest(context, request,)
 
         // THEN
-        // Assert.assertTrue(actualCanShowRequest)
+         Assertions.assertTrue(false)
     }
 
 }
