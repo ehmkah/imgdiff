@@ -24,7 +24,7 @@ This is an experimentel feature.
 * If an image has been removed or added IntelliJ defaults behavior is used (you can't use imageDiff)
 == Development
 
-* Current build state : image:https://api.travis-ci.org/ehmkah/imgdiff.svg?branch=master[link="https://travis-ci.org/ehmkah/imgdiff"]
+* Current build state : image:https://github.com/ehmkah/imgdiff/actions/workflows/gradle-test.yml/badge.svg[link="https://github.com/ehmkah/imgdiff/actions/workflows/gradle-test.yml/badge.svg"]
 
 * Import to intellij with gradle
 * Run task `runIde`
