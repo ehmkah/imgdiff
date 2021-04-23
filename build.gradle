@@ -19,7 +19,7 @@ dependencies {
 }
 
 intellij {
-    version '2020.3'
+    version '2021.1'
 }
 patchPluginXml {
     intellij.updateSinceUntilBuild false
