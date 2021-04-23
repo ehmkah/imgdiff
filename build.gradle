@@ -27,7 +27,7 @@ patchPluginXml {
 <ul>
     <li>1.10.0
      <ul>
-       <li><a href=""></a></li>
+       <li><a href="https://github.com/ehmkah/imgdiff/issues/66">bugfix - plugin works under Intellij 2021.1</a></li>
        <li>internal: moving CI from travis to github-actions</li>
     </ul>
     <li>

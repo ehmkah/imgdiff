@@ -1,24 +1,23 @@
 <idea-plugin>
-  <id>de.ehmkah.projects.imgdiff</id>
-  <name>Image Diff</name>
-  <vendor email="imgdiff.20.mkrausse@spamgourmet.com" url="http://www.m-krausse.de">m-krausse.de</vendor>
+    <id>de.ehmkah.projects.imgdiff</id>
+    <name>Image Diff</name>
+    <vendor email="imgdiff.20.mkrausse@spamgourmet.com" url="http://www.m-krausse.de">m-krausse.de</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
      This plugin shows the diff of two images in the diff view.</br>
      I am happy if you report issues, I am going to fix them.
     ]]></description>
 
-  <idea-version since-build="203"/>
+    <idea-version since-build="203"/>
 
-  <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.lang</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <applicationService serviceInterface="com.intellij.diff.DiffManager"
-                        serviceImplementation="de.ehmkah.projects.imgdiff.ImgDiffManagerImpl"
-                        overrides="true"
-    />
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffBlinkingDiffTool"/>
+        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffOriginalBackgroundBinaryDiffTool"/>
+        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffWhiteBackgroundBinaryDiffTool"/>
+    </extensions>
 
-  <actions/>
+    <actions/>
 
 </idea-plugin>
