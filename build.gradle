@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version "1.4.31"
+    id 'org.jetbrains.kotlin.jvm' version "1.4.32"
     id 'org.jetbrains.intellij' version '0.7.2'
 }
 
@@ -28,6 +28,7 @@ patchPluginXml {
     <li>1.10.0
      <ul>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/66">bugfix - plugin works under Intellij 2021.1</a></li>
+       <li>internal: upgrading dependencies</li>
        <li>internal: moving CI from travis to github-actions</li>
     </ul>
     <li>
