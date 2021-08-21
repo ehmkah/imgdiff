@@ -8,14 +8,14 @@
      I am happy if you report issues, I am going to fix them.
     ]]></description>
 
-    <idea-version since-build="203"/>
+    <idea-version since-build="212"/>
 
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffBlinkingDiffTool"/>
         <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffOriginalBackgroundBinaryDiffTool"/>
         <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffWhiteBackgroundBinaryDiffTool"/>
+        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffBlinkingDiffTool"/>
     </extensions>
 
     <actions/>

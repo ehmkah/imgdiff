@@ -12,7 +12,9 @@ import com.intellij.diff.tools.binary.ThreesideBinaryDiffViewer
 import com.intellij.openapi.fileEditor.OpenFileDescriptor
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.testFramework.BinaryLightVirtualFile
 import java.awt.image.BufferedImage
+import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import javax.imageio.ImageIO
 
@@ -47,10 +49,11 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
         val bufferedImage0 = ImageIO.read(filecontent0.inputStream)
         val bufferedImage1 = ImageIO.read(filecontent1.inputStream)
         val differenceImage = createDiffImage(bufferedImage0, bufferedImage1)
+        val imgDiffVirtualFile = createImageFile(differenceImage)
+
         val diffContent0 = FileContentImpl(project, filecontent0)
         val diffContent1 = FileContentImpl(project, filecontent1)
-
-        val diffContentDifference = FileContentImpl(project, ImgDiffVirtualFile(differenceImage, filecontent0))
+        val diffContentDifference = FileContentImpl(project, imgDiffVirtualFile)
 
         val myRequest = SimpleDiffRequest(request.title,
                 diffContent0, diffContentDifference, diffContent1,
@@ -59,6 +62,15 @@ abstract class ImgDiffBaseBinaryDiffTool : BinaryDiffTool() {
         val result = ThreesideBinaryDiffViewer(context, myRequest)
 
         return result
+    }
+
+    protected fun createImageFile(differenceImage: BufferedImage): VirtualFile {
+        val content = ByteArrayOutputStream().use { outputStream ->
+            ImageIO.write(differenceImage, "png", outputStream)
+            outputStream.flush()
+            outputStream.toByteArray()
+        }
+        return BinaryLightVirtualFile("image.png", content)
     }
 
     abstract fun createDiffImage(bufferedImage0: BufferedImage, bufferedImage1: BufferedImage): BufferedImage
