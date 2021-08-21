@@ -37,3 +37,5 @@ changelog {
     groups = ["Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"]
 }
 
+// Workaround because of https://youtrack.jetbrains.com/issue/KT-42837
+buildSearchableOptions.enabled=false
