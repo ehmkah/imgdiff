@@ -13,9 +13,9 @@
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffBlinkingDiffTool"/>
         <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffOriginalBackgroundBinaryDiffTool"/>
         <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffWhiteBackgroundBinaryDiffTool"/>
+        <diff.DiffTool implementation="de.ehmkah.projects.imgdiff.ImgDiffBlinkingDiffTool"/>
     </extensions>
 
     <actions/>
