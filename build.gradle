@@ -14,12 +14,12 @@ repositories {
 dependencies {
     compile 'com.squareup:gifencoder:0.10.1'
     
-    testImplementation('org.junit.jupiter:junit-jupiter:5.7.1')
+    testImplementation('org.junit.jupiter:junit-jupiter:5.7.2')
     testImplementation('com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0')
 }
 
 intellij {
-    version '2021.1'
+    version '2021.2'
 }
 patchPluginXml {
     intellij.updateSinceUntilBuild false
@@ -27,11 +27,9 @@ patchPluginXml {
 <ul>
     <li>1.11.0
      <ul>
-       <li><a href="">message</a></li>
+       <li><a href="https://github.com/ehmkah/imgdiff/issues/69">Bugfix - plugin works under Intellij 2021.2</a></li>
     </ul>
     <li>
-    
-    
     <li>1.10.0
      <ul>
        <li><a href="https://github.com/ehmkah/imgdiff/issues/66">bugfix - plugin works under Intellij 2021.1</a></li>

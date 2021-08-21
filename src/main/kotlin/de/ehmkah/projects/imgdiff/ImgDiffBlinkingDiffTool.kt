@@ -26,7 +26,7 @@ class ImgDiffBlinkingDiffTool : ImgDiffBaseBinaryDiffTool() {
         val diffContent0 = FileContentImpl(project, filecontent0)
         val diffContent1 = FileContentImpl(project, filecontent1)
 
-        val diffContentDifference = FileContentImpl(project, ImgDiffVirtualFile(differenceImage, filecontent0))
+        val diffContentDifference = FileContentImpl(project, createImageFile(differenceImage))
 
         val myRequest = SimpleDiffRequest(request.title,
                 diffContent0, diffContentDifference, diffContent1,
