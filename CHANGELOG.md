@@ -5,6 +5,7 @@
 
 ### Changed
 - update dependencies
+- Updated gradle
 ### Deprecated
 
 ### Removed
