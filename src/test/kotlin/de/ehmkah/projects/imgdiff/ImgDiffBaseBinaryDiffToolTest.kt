@@ -4,11 +4,11 @@ import com.intellij.diff.contents.DiffContent
 import com.intellij.diff.contents.FileContentImpl
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.vfs.VirtualFile
-import com.nhaarman.mockitokotlin2.doReturn
-import com.nhaarman.mockitokotlin2.mock
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.mock
 
 internal class ImgDiffBaseBinaryDiffToolTest {
 
