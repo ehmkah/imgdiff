@@ -7,8 +7,8 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 
 internal class ImgDiffBaseBinaryDiffToolTest {
 
