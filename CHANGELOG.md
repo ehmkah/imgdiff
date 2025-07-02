@@ -5,6 +5,13 @@
 
 ### Changed
 - update dependencies
+- upgrade Gradle from 7.2 to 8.12.0
+- upgrade Kotlin plugin from 1.5.21 to 2.0.21
+- upgrade IntelliJ plugin from 1.1.4 to 1.17.4
+- upgrade Changelog plugin from 1.2.1 to 2.2.1
+- upgrade JUnit from 5.7.2 to 5.10.1
+- upgrade Mockito from mockitokotlin2:2.2.0 to mockito-kotlin:5.2.1
+- update GitHub Actions to use Java 17 and newer action versions
 ### Deprecated
 
 ### Removed
