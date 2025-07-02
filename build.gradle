@@ -9,6 +9,12 @@ apply plugin: 'org.jetbrains.changelog'
 group 'de.ehmkah.projects'
 version '1.12.0-SNAPSHOT'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -18,6 +24,18 @@ dependencies {
     
     testImplementation('org.junit.jupiter:junit-jupiter:5.7.2')
     testImplementation('com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0')
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 intellij {
