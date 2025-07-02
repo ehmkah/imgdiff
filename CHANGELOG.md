@@ -1,17 +1,10 @@
 # Changelog
 
 ## [Unreleased]
-### Added
-
-### Changed
 - Configure Gradle build to explicitly specify JDK 11 requirements for better IDE integration
 - update dependencies
 - upgrade to gradle 7.3
-### Deprecated
 
-### Removed
-
-### Fixed
 
 ## [1.11.0]
 
