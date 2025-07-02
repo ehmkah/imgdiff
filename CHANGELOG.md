@@ -4,6 +4,7 @@
 ### Added
 
 ### Changed
+- Configure Gradle build to explicitly specify JDK 11 requirements for better IDE integration
 - update dependencies
 ### Deprecated
 
