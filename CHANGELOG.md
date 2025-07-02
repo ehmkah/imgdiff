@@ -2,9 +2,13 @@
 
 ## [Unreleased]
 - Upgrade project to JDK 17 from JDK 11
-- Configure Gradle build to explicitly specify JDK 17 requirements for better IDE integration
+- Configure Gradle build to explicitly specify JDK 17 requirements for better IDE integration 
 - update dependencies
 - upgrade to gradle 7.3
+- Update to IntelliJ 2022.2 as building platform
+- Upgrade gradle-intellij-plugin to 1.8.0 for IntelliJ 2022.2 support
+- Upgrade gradle-changelog-plugin to 1.3.1
+- Upgrade Kotlin to 1.7.10 for better compatibility
 
 
 ## [1.11.0]

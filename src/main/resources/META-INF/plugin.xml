@@ -8,7 +8,7 @@
      I am happy if you report issues, I am going to fix them.
     ]]></description>
 
-    <idea-version since-build="212"/>
+    <idea-version since-build="222"/>
 
     <depends>com.intellij.modules.lang</depends>
 
