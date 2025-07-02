@@ -5,6 +5,7 @@
 
 ### Changed
 - update dependencies
+- upgrade to gradle 7.3
 ### Deprecated
 
 ### Removed
