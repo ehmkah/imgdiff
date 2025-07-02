@@ -27,7 +27,7 @@ This is an experimentel feature.
 * Current build state : image:https://github.com/ehmkah/imgdiff/actions/workflows/gradle-test.yml/badge.svg[link="https://github.com/ehmkah/imgdiff/actions/workflows/gradle-test.yml/badge.svg"]
 
 === Requirements
-* Java 11 or higher (project is configured to use Java 11)
+* Java 17 or higher (project is configured to use Java 17)
 
 === Setup
 * Import to intellij with gradle
