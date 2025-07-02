@@ -1,7 +1,8 @@
 # Changelog
 
 ## [Unreleased]
-- Configure Gradle build to explicitly specify JDK 11 requirements for better IDE integration
+- Upgrade project to JDK 17 from JDK 11
+- Configure Gradle build to explicitly specify JDK 17 requirements for better IDE integration
 - update dependencies
 - upgrade to gradle 7.3
 
