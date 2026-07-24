@@ -6,8 +6,8 @@ plugins {
 
 apply plugin: 'org.jetbrains.changelog'
 
-group 'de.ehmkah.projects'
-version '1.12.0-SNAPSHOT'
+group = 'de.ehmkah.projects'
+version = '1.12.0-SNAPSHOT'
 
 java {
     toolchain {
