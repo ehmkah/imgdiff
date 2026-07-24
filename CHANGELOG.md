@@ -1,11 +1,11 @@
 # Changelog
 
 ## [Unreleased]
-- Upgrade project to JDK 17 from JDK 11
-- Configure Gradle build to explicitly specify JDK 17 requirements for better IDE integration
+- Upgrade project to JDK 21 from JDK 11
+- Configure Gradle build to explicitly specify JDK 21 requirements for better IDE integration
 - update dependencies
-- upgrade to gradle 8.4.14
-- upgrade to intellij 2024.3
+- upgrade to gradle 9.x
+- upgrade to intellij 2025.3
 
 ## [1.11.0]
 
