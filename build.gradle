@@ -43,6 +43,8 @@ compileTestKotlin {
 intellij {
     version.set('2023.3')
     patchPluginXml {
+        sinceBuild.set('233')
+        untilBuild.set('')
         changeNotes.set(provider({changelog.getLatest().toHTML()}))
     }
 }
