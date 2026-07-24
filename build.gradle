@@ -35,18 +35,6 @@ dependencies {
     testImplementation('org.jetbrains.kotlin:kotlin-test:2.3.21')
 }
 
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-}
-
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-}
-
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
