@@ -51,7 +51,6 @@ intellijPlatform {
     pluginConfiguration {
         ideaVersion {
             sinceBuild.set('243')
-            untilBuild.set(provider { null })
         }
         changeNotes.set(provider({changelog.getLatest().toHTML()}))
     }
