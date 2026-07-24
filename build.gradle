@@ -1,6 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "1.9.24"
-    id 'org.jetbrains.intellij' version '1.17.4'
+    id 'org.jetbrains.intellij.platform' version '2.11.0'
     id 'org.jetbrains.changelog' version '1.2.1'
 }
 
@@ -17,11 +17,18 @@ java {
 
 repositories {
     mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 dependencies {
     implementation 'com.squareup:gifencoder:0.10.1'
-    
+
+    intellijPlatform {
+        create('IC', '2024.3')
+    }
+
     testImplementation('org.junit.jupiter:junit-jupiter:5.7.2')
     testImplementation('org.mockito.kotlin:mockito-kotlin:5.4.0')
     testImplementation('junit:junit:4.13.2')
@@ -40,11 +47,12 @@ compileTestKotlin {
     }
 }
 
-intellij {
-    version.set('2024.3')
-    patchPluginXml {
-        sinceBuild.set('243')
-        untilBuild.set('')
+intellijPlatform {
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild.set('243')
+            untilBuild.set(provider { null })
+        }
         changeNotes.set(provider({changelog.getLatest().toHTML()}))
     }
 }
