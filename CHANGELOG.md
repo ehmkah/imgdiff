@@ -4,7 +4,7 @@
 - Upgrade project to JDK 17 from JDK 11
 - Configure Gradle build to explicitly specify JDK 17 requirements for better IDE integration
 - update dependencies
-- upgrade to gradle 7.3
+- upgrade to gradle 8.4.14
 - upgrae to intellij 2022
 
 
