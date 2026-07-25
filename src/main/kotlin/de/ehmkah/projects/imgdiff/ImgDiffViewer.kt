@@ -7,6 +7,8 @@ import com.intellij.diff.tools.util.ThreeDiffSplitter
 import com.intellij.openapi.ui.DialogBuilder
 import org.jetbrains.annotations.NotNull
 import java.awt.BorderLayout
+import java.awt.Component
+import java.awt.Container
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import javax.swing.*
@@ -24,12 +26,28 @@ class ImgDiffViewer(context: @NotNull DiffContext, request: @NotNull DiffRequest
 
 
     fun showBlinkingDiff(imageData: ByteArray) {
-        val component: ThreeDiffSplitter = myContentPanel.getComponent(0) as ThreeDiffSplitter
-        val contentPanel = component.getComponent(3) as JPanel
+        val splitter = findComponentOfType<ThreeDiffSplitter>(component)
+            ?: return
+        val contentPanel = splitter.getComponent(3) as JPanel
         while (contentPanel.componentCount > 0) {
             contentPanel.remove(0)
         }
         addBlinkingDiff(contentPanel, imageData)
+    }
+
+    private inline fun <reified T : Component> findComponentOfType(root: Component): T? =
+        findComponentOfType(root, T::class.java)
+
+    private fun <T : Component> findComponentOfType(root: Component, type: Class<T>): T? {
+        if (type.isInstance(root)) {
+            return type.cast(root)
+        }
+        if (root is Container) {
+            for (child in root.components) {
+                findComponentOfType(child, type)?.let { return it }
+            }
+        }
+        return null
     }
 
 
