@@ -6,6 +6,7 @@
 - update dependencies
 - upgrade to gradle 9.x
 - upgrade to intellij 2026.2
+- removed usage of internal intellij api
 
 ## [1.11.0]
 
