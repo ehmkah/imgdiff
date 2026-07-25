@@ -5,7 +5,7 @@
 - Configure Gradle build to explicitly specify JDK 21 requirements for better IDE integration
 - update dependencies
 - upgrade to gradle 9.x
-- upgrade to intellij 2025.3
+- upgrade to intellij 2026.2
 
 ## [1.11.0]
 
