@@ -33,8 +33,11 @@ dependencies {
 
     testImplementation('org.junit.jupiter:junit-jupiter:6.1.2')
     testImplementation('org.mockito.kotlin:mockito-kotlin:6.3.0')
-    testImplementation('junit:junit:4.13.2')
     testImplementation('org.jetbrains.kotlin:kotlin-test:2.4.10')
+}
+
+test {
+    useJUnitPlatform()
 }
 
 intellijPlatform {
