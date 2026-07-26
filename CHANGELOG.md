@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.12.0]
 - Upgrade project to JDK 21 from JDK 11
 - Configure Gradle build to explicitly specify JDK 21 requirements for better IDE integration
 - update dependencies
