@@ -9,7 +9,7 @@ plugins {
 apply plugin: 'org.jetbrains.changelog'
 
 group = 'de.ehmkah.projects'
-version = '1.13.0-SNAPSHOT'
+version = '1.13.0'
 
 java {
     toolchain {
@@ -50,7 +50,7 @@ intellijPlatform {
 }
 
 changelog {
-    version = "1.12.0"
+    version = "1.13.0"
     path = "${project.projectDir}/CHANGELOG.md"
     header = "[${-> version.get()}]}"
     itemPrefix = "-"
