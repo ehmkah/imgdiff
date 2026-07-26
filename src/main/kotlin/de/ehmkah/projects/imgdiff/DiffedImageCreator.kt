@@ -74,16 +74,18 @@ class DiffedImageCreator {
                     val r1 = rgb1 shr 16 and 0xff
                     val g1 = rgb1 shr 8 and 0xff
                     val b1 = rgb1 and 0xff
+                    val a1 = rgb1 shr 24 and 0xff
                     val r2 = rgb2 shr 16 and 0xff
                     val g2 = rgb2 shr 8 and 0xff
                     val b2 = rgb2 and 0xff
+                    val a2 = rgb2 shr 24 and 0xff
                     diff = Math.abs(r1 - r2)
                     diff += Math.abs(g1 - g2)
                     diff += Math.abs(b1 - b2)
                     diff /= 3
 
                     diffPixel = diff shl 16 or (diff shl 8) or diff
-                    if (diffPixel == 0) {
+                    if (diffPixel == 0 && a1 == a2) {
                         diffPixel = backgroundColor(currentWidth, currentHeight)
                     } else {
                         diffPixel = differentValue
