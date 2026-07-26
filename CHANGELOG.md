@@ -1,6 +1,7 @@
 # Changelog
 
 [[Unreleased]]
+-  [diff is displayed if images only differ in their alpha channel](https://github.com/ehmkah/imgdiff/issues/78)
 
 ## [1.12.0]
 - Upgrade project to JDK 21 from JDK 11

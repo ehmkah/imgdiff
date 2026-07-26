@@ -70,6 +70,17 @@ class DiffedImageCreatorTest {
     }
 
     @Test
+    fun testDifferentAlphaChannel() {
+        val original = readImage("/black.png")
+        val changed = readImage("/blackAlpha.png")
+
+        val actual = sut.getDifferenceImageWhiteAsBackground(original, changed)
+        val expected = readImage("/expectedAlphaDiff.png")
+
+        assertTrue(compareImages(expected, actual))
+    }
+
+    @Test
     fun testImagesHaveNoDiff() {
         val original = readImage("/identical.png")
         val changed = readImage("/identical.png")
