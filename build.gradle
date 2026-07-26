@@ -9,7 +9,7 @@ plugins {
 apply plugin: 'org.jetbrains.changelog'
 
 group = 'de.ehmkah.projects'
-version = '1.13.0'
+version = '1.14.0-SNAPSHOT'
 
 java {
     toolchain {

@@ -1,6 +1,9 @@
 # Changelog
 
-[[1.13.0]]
+## [unreleased]
+- nothing so far
+
+## [1.13.0]
 -  [diff is displayed if images only differ in their alpha channel](https://github.com/ehmkah/imgdiff/issues/78)
 
 ## [1.12.0]
